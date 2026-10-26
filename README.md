@@ -1,39 +1,24 @@
-# THE ARCHITECT — HSPD Research Site with Integrated Arbiter Lab (v0.3)
+# The Architect — HSPD Research Site, doctrinally integrated 21-agent reference architecture (v0.4)
 
-**Deployment target:** https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/
+**Purpose:** Existing GitHub Pages research website expanded with source-referenced design specifications for the 20 specialist agents and retained Arbiter Lab for Agent XXI.
 
-This package replaces the existing GitHub Pages site content. It is a site source package, not a GitHub deployment. Upload its contents to the **root of the public repository** and commit to `main`, preserving the directory structure.
+**Entry points**
+- `index.html` — original homepage, 20-agent roster, doctrine and link to Agent Doctrine Library.
+- `agents/index.html` — interactive Agent Doctrine Library: 20 profiles, 160 proposed skills, source quotes, falsification scenarios, bounded instructions, case-specific search and export.
+- `agents/AGENT_PROFILES.json` — complete 20-agent candidate specifications; includes proposed input/output contracts, limits and source references.
+- `agents/CAPABILITY_REGISTRY_20_AGENTS.csv` — candidate skills and one falsification test per skill.
+- `agents/DOCTRINAL_SOURCE_LINKS.csv` — exact source passage IDs, book/chapter, text and mapping status.
+- `arbiter/index.html` — preserved Agent XXI Arbiter Lab with search, 24 candidate capabilities and deterministic evidence gate.
+- `arbiter/knowledge.js` — full shared 7,087-passage doctrine library from the two books and v1.1 addendum.
+- `sandbox/index.html` — prior six-case deterministic experimental sandbox.
+- `AGENTS.csv` — original roster, retained unchanged.
+- `SOURCE_METHOD.md` — sources, method, review obligations and unresolved gaps.
+- `VALIDATION_CHECKLIST.md` — steps to turn these role specifications into independent models and real experiments.
 
-## Included
+**Experimental status:** No real 20-agent model runtime has been deployed; the pages are a browsable doctrinal specification and a limited deterministic testing interface. The heroic names and machine-readable skills are subsequent AI-assisted design proposals, not claims about words literally in the books. Proposed source matches are candidates for the author to approve. This is a research draft, not independently validated performance.
 
-- `index.html`: existing v0.2 homepage and 21-agent presentation, with prominent **Open Arbiter Lab** buttons.
-- `arbiter/index.html`: integrated, responsive, gold/dark themed research workbench.
-- `arbiter/knowledge.js`: complete author-supplied manuscript paragraphs, 7,087 searchable passages from both books and addendum.
-- `arbiter/app.js`, `arbiter/agent_registry.js`: source search, 24 candidate capability cards, principle quotations, deterministic evidence gate, and 20-role synthetic report intake.
-- `arbiter/CHAPTER_INVENTORY.csv`, `arbiter/CAPABILITY_REGISTRY.csv`, `arbiter/SOURCE_CONCORDANCE.csv`: traceable research provenance.
-- `sandbox/`: existing separate deterministic HSPD network experiment (6 scenarios, 3 comparison policies).
+**Publication:** The website embeds the complete extracted manuscript text in `arbiter/knowledge.js`. Confirm you want those complete texts publicly accessible on GitHub and check your Amazon/KDP distribution terms.
 
-## Scope and scientific limitations
+**Deploy:** Extract the ZIP; upload the *contents* to the public repository root, retaining `index.html`, `agents/`, `arbiter/`, and `sandbox/`; commit to `main`. If folder uploads are awkward, use GitHub Desktop to copy the folders into a cloned repo before committing. The website works as static files with relative links; no API keys required.
 
-This works in GitHub Pages **without a backend or API keys**. It is a read-only source browser plus deterministic evaluation software. It **does not deploy 21 independent LLM agents**, authenticate evidence origins, continually learn, call web APIs or reliably determine universal truth. The **24 proposed capabilities and automatic passage matches are candidates**, not validated skills or approved doctrinal rules. The evidence gate's two-independent-root threshold is **experimental**, not doctrine law. All decision traces explicitly prohibit consequential action without human authority.
-
-## PUBLICATION AND RIGHTS — PLEASE READ
-
-The complete text of both books and the adversarial addendum is embedded in `arbiter/knowledge.js` and will be **publicly downloadable** when uploaded to a public GitHub repository. The source DOCX originals are not distributed in this website package, but the extracted paragraphs are nearly all included. Publishing a book on Amazon does not necessarily grant unlimited rights to distribute full text elsewhere if a publisher/Kindle Select agreement applies. You, as author, must confirm that releasing the full text is intentional and compatible with your distribution agreement. If not, use a separately prepared redacted/citation-only corpus instead of uploading this package.
-
-## Upload to GitHub
-
-1. Extract this ZIP to a folder on your Windows computer.
-2. Open your existing GitHub repository. Use **Add file → Upload files** and drag the **contents** of the extracted folder (not the enclosing folder) onto the root upload area. Ensure GitHub displays paths `index.html`, `arbiter/index.html`, `arbiter/knowledge.js`, `sandbox/index.html` before committing. GitHub's web interface may require dragging folders individually or using GitHub Desktop to preserve structure.
-3. Commit to branch `main`, replacing the old root `index.html`. If the browser won't accept a folder drag, use GitHub Desktop or Git command line: copy the contents into your local checkout, commit, push.
-4. After Pages deploys, open the homepage, then `/arbiter/` and `/sandbox/`. Refresh with Ctrl+F5 if cached.
-
-**Do not paste API keys, passwords, private credentials or personal evidence records into this published repo.** The browser workbench runs locally in the visitor's browser and does not send entered case text to a server.
-
-## Local testing
-
-To try the full system without publishing, extract the ZIP, then double-click `index.html` and follow **Open Arbiter Lab**. The links and scripts are all relative.
-
-## Next engineering stage
-
-A separately hosted, authenticated backend could run independent LLM processes, provide controlled source provenance tools, isolate agent contexts and allow pre-registered blinded adversarial evaluations. Do not embed secret model API keys in the GitHub Pages JavaScript.
+**Research authenticity:** The entire author-supplied 7,087-passage library is referenced from one shared corpus; each specialist role has a source-scoped profile, not a separate trained language model. It would require an isolated runtime, authenticated inputs, human-authority controls, an independent inference backend and external evaluation to substantiate ability. Never put model API keys in a public GitHub Pages site.
