@@ -1,0 +1,28 @@
+{
+  "release": "0.3",
+  "prototype_class": "static research interface",
+  "public_full_text": true,
+  "texts_included_as": "arbiter/knowledge.js",
+  "source_files": [
+    {
+      "name": "THE HYBRID SOVEREIGN Peace Doctrine - The Book.docx",
+      "sha256": "f700bfcf037b4fba56c62b9a8458b05c837a3d753cdae4cbc02293210809e1a5"
+    },
+    {
+      "name": "The Architect World Peace Doctrine and Strategy FINAL With_Index.docx",
+      "sha256": "591367d2dc3686200c4dced1c7b2de01476fcef6b0f0fbf325fbadbd31f5cb5b"
+    },
+    {
+      "name": "HSPD_Adversarial_Validation_Errata_Addendum_v1.1(1).docx",
+      "sha256": "2cea84d6ec2962aee56480b71d22c56b9d9e06f1784ea63974e4aacbf25e3e08"
+    }
+  ],
+  "scientific_validation": "NOT ESTABLISHED",
+  "independent_llm_agents": false,
+  "real_world_action": false,
+  "knowledge_passages": 7087,
+  "capability_proposals": 24,
+  "named_roles": 21,
+  "testbed_scenarios": 6,
+  "controls": "no API calls from browser scripts, no real-world actions"
+}

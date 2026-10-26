@@ -1,0 +1,29 @@
+THE ARCHITECT — HSPD SANDBOX v0.1
+
+TO TRY IT NOW (WINDOWS / MAC / LINUX)
+
+1. Extract the ZIP completely to a normal folder.
+2. Open that folder and DOUBLE-CLICK index.html.
+3. Under 'Run a controlled test', select the first scenario.
+4. Press 'Compare 3 policies' (the three results appear side by side).
+5. Press 'Reveal evaluator truth' to examine the synthetic answer.
+6. Choose 'Spoofed provenance defeats the toy Arbiter' to see a known failure.
+7. Press 'Export trace JSON' to save the experiment record.
+8. Scroll to '21 roles' to view every agent name and function.
+
+DO NOT run the Python files to use the graphical demonstration.
+Python is optional and for technical collaborators who want reusable datasets and scripts.
+
+CONTEXT
+The 21 names/roles are a CONCEPTUAL registry, NOT 21 operating AI models.
+No external services, network API, passwords or paid tools are needed.
+The first version is an OFFLINE TOY EVIDENCE TEST, not a validated HSPD shield.
+
+WHAT TO BUILD NEXT FOR APART RESEARCH
+1. Separate real LLM instances with isolated contexts.
+2. Reproducible environment state, messages, resources, and event/action logging.
+3. No-network container isolation, permissions and tool limits.
+4. Blinded, adversarially generated tests and meaningful performance metrics.
+5. Independent replication and a limitations/dual-use report.
+
+Read README.md and RESEARCH_PROTOCOL.md for technical and research details.

@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "name": "Aegaryn",
+    "epithet": "The Bastion",
+    "role": "Infrastructure resilience",
+    "group": "Guardians",
+    "doctrinal_reference": "Infrastructure Redundancy Grid",
+    "name_status": "proposed",
+    "domain": "infrastructure",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 2,
+    "name": "Veylith",
+    "epithet": "The Signalkeeper",
+    "role": "Communications integrity",
+    "group": "Guardians",
+    "doctrinal_reference": "Signal Integrity Looping",
+    "name_status": "proposed",
+    "domain": "communications",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 3,
+    "name": "Thariven",
+    "epithet": "The Wayfinder",
+    "role": "Logistics continuity",
+    "group": "Guardians",
+    "doctrinal_reference": "Doctrine-Aligned Chain",
+    "name_status": "proposed",
+    "domain": "logistics",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 4,
+    "name": "Aurivex",
+    "epithet": "The Ledgerkeeper",
+    "role": "Economic and payments continuity",
+    "group": "Guardians",
+    "doctrinal_reference": "Economic Trust Retention",
+    "name_status": "proposed",
+    "domain": "economics",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 5,
+    "name": "Narethyl",
+    "epithet": "The Veilbreaker",
+    "role": "Narrative resilience",
+    "group": "Guardians",
+    "doctrinal_reference": "Narrative Resilience Layer",
+    "name_status": "proposed",
+    "domain": "narrative",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 6,
+    "name": "Myndovar",
+    "epithet": "The Mindwarden",
+    "role": "Cognitive sovereignty",
+    "group": "Guardians",
+    "doctrinal_reference": "Cognitive Sovereignty Engine",
+    "name_status": "proposed",
+    "domain": "cognition",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 7,
+    "name": "Dravaryn",
+    "epithet": "The Shieldbound",
+    "role": "Defensive deterrence",
+    "group": "Guardians",
+    "doctrinal_reference": "Deterrence Execution Mesh",
+    "name_status": "proposed",
+    "domain": "deterrence",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 8,
+    "name": "Hearthryn",
+    "epithet": "The Lifekeeper",
+    "role": "Population continuity",
+    "group": "Guardians",
+    "doctrinal_reference": "Population Continuity Protocols",
+    "name_status": "proposed",
+    "domain": "population",
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 9,
+    "name": "Solvyr",
+    "epithet": "The First Witness",
+    "role": "Independent analyst A",
+    "group": "Witnesses",
+    "doctrinal_reference": "Blind First-Pass Analysis",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 10,
+    "name": "Elyrion",
+    "epithet": "The Second Witness",
+    "role": "Independent analyst B",
+    "group": "Witnesses",
+    "doctrinal_reference": "Epistemic Redundancy Protocol",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 11,
+    "name": "Thornev",
+    "epithet": "The Dissenter",
+    "role": "Independent challenge",
+    "group": "Witnesses",
+    "doctrinal_reference": "Protected Dissent",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 12,
+    "name": "Orivane",
+    "epithet": "The Rootkeeper",
+    "role": "Provenance auditing",
+    "group": "Witnesses",
+    "doctrinal_reference": "Provenance Independence Protocol",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 13,
+    "name": "Kaelrix",
+    "epithet": "The Falsifier",
+    "role": "Causal and falsification review",
+    "group": "Witnesses",
+    "doctrinal_reference": "Causal Diversity & Falsification",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 14,
+    "name": "Varrun",
+    "epithet": "The Costwarden",
+    "role": "Defensive-cost review",
+    "group": "Sentinels",
+    "doctrinal_reference": "Asymmetric Defensive Cost",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 15,
+    "name": "Farreth",
+    "epithet": "The Horizonwatcher",
+    "role": "Priority and tail-risk review",
+    "group": "Sentinels",
+    "doctrinal_reference": "Priority Integrity & Tail-Risk Reservation",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 16,
+    "name": "Elyndra",
+    "epithet": "The Hearthshield",
+    "role": "Civilian burden review",
+    "group": "Sentinels",
+    "doctrinal_reference": "Minimum Protection & Burden Budget",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 17,
+    "name": "Oathryn",
+    "epithet": "The Oathkeeper",
+    "role": "Constitutional review",
+    "group": "Sentinels",
+    "doctrinal_reference": "Constitutional Impossibility Protocol",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 18,
+    "name": "Synthera",
+    "epithet": "The Weaver",
+    "role": "System orchestration",
+    "group": "Keepers",
+    "doctrinal_reference": "Self-Healing Governance Logic Loop",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 19,
+    "name": "Scarveth",
+    "epithet": "The Chronicler",
+    "role": "Audit, replay and versioning",
+    "group": "Keepers",
+    "doctrinal_reference": "Scar Logic",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 20,
+    "name": "Umbrakar",
+    "epithet": "The Shadow Challenger",
+    "role": "Independent red-team",
+    "group": "Keepers",
+    "doctrinal_reference": "Non-Doctrine Adversarial Review",
+    "name_status": "proposed",
+    "domain": null,
+    "implementation": "deterministic_role_stub"
+  },
+  {
+    "id": 21,
+    "name": "The Arbiter",
+    "epithet": "Epistemic oversight",
+    "role": "Evidence-integrity review, provenance/independence and uncertainty",
+    "group": "Oversight",
+    "doctrinal_reference": "HSPD Errata §§8.2–8.3, book Ch. 13.8, author instruction 10 October 2026",
+    "name_status": "author_named",
+    "domain": null,
+    "implementation": "deterministic_candidate_policy"
+  }
+]

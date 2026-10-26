@@ -1,0 +1,223 @@
+{
+  "schema_version": "0.1",
+  "experiment_type": "synthetic_deterministic_policy_test",
+  "not_a_live_ai_swarm": true,
+  "scenario_id": "spoofed_source_origins",
+  "scenario_title": "Spoofed provenance defeats the toy Arbiter",
+  "claim": "Emergency medical-supply corridor has failed",
+  "seed": 1,
+  "mode": "arbiter",
+  "agent_registry_count": 21,
+  "implemented_independent_llm_agents": 0,
+  "evidence": [
+    {
+      "id": "real-audit",
+      "observed_root": "warehouse-log",
+      "supports_claim": false,
+      "confidence": 0.85,
+      "intervention_generated": false
+    },
+    {
+      "id": "fabricated-a",
+      "observed_root": "claimed-sensor-A",
+      "supports_claim": true,
+      "confidence": 0.99,
+      "intervention_generated": false
+    },
+    {
+      "id": "fabricated-c",
+      "observed_root": "claimed-operator-C",
+      "supports_claim": true,
+      "confidence": 0.99,
+      "intervention_generated": false
+    },
+    {
+      "id": "fabricated-b",
+      "observed_root": "claimed-camera-B",
+      "supports_claim": true,
+      "confidence": 0.99,
+      "intervention_generated": false
+    }
+  ],
+  "ground_truth": false,
+  "evaluator_actual_roots": {
+    "fabricated-a": "attacker-root",
+    "fabricated-b": "attacker-root",
+    "fabricated-c": "attacker-root",
+    "real-audit": "warehouse-log"
+  },
+  "labels_withheld_from_candidate_policy": true,
+  "labels_not_security_isolated": true,
+  "recommendation": "REQUEST_HUMAN_REVIEW",
+  "positive_classification": true,
+  "correct_classification": false,
+  "confidence_score": 0.75,
+  "explanation": "Observed independent roots: 3 supporting / 1 opposing; 0 internally conflicted, 0 excluded. Candidate rule: >=2 supporting roots and >=0.67 support share.",
+  "alerts": [
+    "Independent contradictory source(s) preserved for human review.",
+    "Observed source labels may be spoofed; lineage authenticity is not verified."
+  ],
+  "observed_root_votes": {
+    "claimed-camera-B": true,
+    "claimed-operator-C": true,
+    "claimed-sensor-A": true,
+    "warehouse-log": false
+  },
+  "trace": [
+    {
+      "seq": 1,
+      "agent": "Aegaryn",
+      "role": "Infrastructure resilience",
+      "phase": "context_stub",
+      "message": "Context only: Simulated power system may face an outage. No external action or domain model."
+    },
+    {
+      "seq": 2,
+      "agent": "Veylith",
+      "role": "Communications integrity",
+      "phase": "context_stub",
+      "message": "Context only: Communications status uncertain. No external action or domain model."
+    },
+    {
+      "seq": 3,
+      "agent": "Thariven",
+      "role": "Logistics continuity",
+      "phase": "context_stub",
+      "message": "Context only: Medical supply delivery may be delayed. No external action or domain model."
+    },
+    {
+      "seq": 4,
+      "agent": "Aurivex",
+      "role": "Economic and payments continuity",
+      "phase": "context_stub",
+      "message": "Context only: Financial services are unaffected in this toy scenario. No external action or domain model."
+    },
+    {
+      "seq": 5,
+      "agent": "Narethyl",
+      "role": "Narrative resilience",
+      "phase": "context_stub",
+      "message": "Context only: Reports are inconsistent across copies of a news feed. No external action or domain model."
+    },
+    {
+      "seq": 6,
+      "agent": "Myndovar",
+      "role": "Cognitive sovereignty",
+      "phase": "context_stub",
+      "message": "Context only: Alert fatigue is a possible hypothetical concern. No external action or domain model."
+    },
+    {
+      "seq": 7,
+      "agent": "Dravaryn",
+      "role": "Defensive deterrence",
+      "phase": "context_stub",
+      "message": "Context only: No kinetic or retaliatory action is modelled. No external action or domain model."
+    },
+    {
+      "seq": 8,
+      "agent": "Hearthryn",
+      "role": "Population continuity",
+      "phase": "context_stub",
+      "message": "Context only: Hospitals require reliable electricity and medicines. No external action or domain model."
+    },
+    {
+      "seq": 9,
+      "agent": "Solvyr",
+      "role": "Independent analyst A",
+      "phase": "simulated_policy",
+      "message": "Blind synthetic first-pass: 3 supporting / 1 opposing. Sources not independently verified."
+    },
+    {
+      "seq": 10,
+      "agent": "Elyrion",
+      "role": "Independent analyst B",
+      "phase": "simulated_policy",
+      "message": "Independent policy pass (same input records): weighted confidence 0.78. Not an independent model instance."
+    },
+    {
+      "seq": 11,
+      "agent": "Thornev",
+      "role": "Independent challenge",
+      "phase": "simulated_policy",
+      "message": "Preserve contradictory observations; challenge consensus and source reuse."
+    },
+    {
+      "seq": 12,
+      "agent": "Orivane",
+      "role": "Provenance auditing",
+      "phase": "simulated_policy",
+      "message": "4 records identify 4 observed upstream roots. Root identifiers may be falsified."
+    },
+    {
+      "seq": 13,
+      "agent": "Kaelrix",
+      "role": "Causal and falsification review",
+      "phase": "simulated_policy",
+      "message": "Keep claim true / claim false / unknown open; synthetic causal mechanisms are not verified."
+    },
+    {
+      "seq": 14,
+      "agent": "Varrun",
+      "role": "Defensive-cost review",
+      "phase": "simulated_policy",
+      "message": "Synthetic evidence-processing cost: 4 units; real computation costs not measured."
+    },
+    {
+      "seq": 15,
+      "agent": "Farreth",
+      "role": "Priority and tail-risk review",
+      "phase": "simulated_policy",
+      "message": "Scenario priority label: critical; no actual triage undertaken."
+    },
+    {
+      "seq": 16,
+      "agent": "Elyndra",
+      "role": "Civilian burden review",
+      "phase": "simulated_policy",
+      "message": "Human impacts remain simulated; no population consequences are enacted."
+    },
+    {
+      "seq": 17,
+      "agent": "Oathryn",
+      "role": "Constitutional review",
+      "phase": "simulated_policy",
+      "message": "All outcomes advisory only; consequential actions require external human authority."
+    },
+    {
+      "seq": 18,
+      "agent": "Synthera",
+      "role": "System orchestration",
+      "phase": "simulated_policy",
+      "message": "Run mode arbiter; seed 1; data order randomized but no network messaging."
+    },
+    {
+      "seq": 19,
+      "agent": "Scarveth",
+      "role": "Audit, replay and versioning",
+      "phase": "simulated_policy",
+      "message": "Exact inputs, role labels and outputs included in downloadable trace."
+    },
+    {
+      "seq": 20,
+      "agent": "Umbrakar",
+      "role": "Independent red-team",
+      "phase": "simulated_policy",
+      "message": "Red-team: reports falsely claim distinct root IDs, but ground-truth lineage identifies one corrupted origin. Detection is NOT implemented: expected Arbiter failure."
+    },
+    {
+      "seq": 21,
+      "agent": "The Arbiter",
+      "role": "Evidence-integrity oversight",
+      "phase": "active_policy",
+      "message": "Observed independent roots: 3 supporting / 1 opposing; 0 internally conflicted, 0 excluded. Candidate rule: >=2 supporting roots and >=0.67 support share. Advisory only."
+    }
+  ],
+  "limitations": [
+    "Every role is a deterministic stub/policy in one Python process; none is an independent LLM.",
+    "No operating-system sandbox or security boundary is implemented.",
+    "Ground truth and source provenance are invented for controlled experiments.",
+    "Decisions are advisory labels, never permission to act in the world.",
+    "Apparent source independence can be spoofed; the candidate Arbiter policy fails on that case."
+  ],
+  "sha256": "75494bed27975db3fcc698db385b4cd7e8646a0af2468162ce1ce9d22875ae77"
+}

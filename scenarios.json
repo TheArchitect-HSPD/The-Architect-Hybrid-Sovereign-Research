@@ -1,0 +1,340 @@
+{
+  "copied_false_consensus": {
+    "title": "Five confident reports, one false origin",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": false,
+    "severity": "high",
+    "attack_description": "Adversary repeats a false claim through one upstream source. Majority must not be confused with independent confirmation.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "repost_A",
+        "observed_root": "rumour-origin",
+        "supports_claim": true,
+        "confidence": 0.98,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-origin"
+      },
+      {
+        "id": "repost_B",
+        "observed_root": "rumour-origin",
+        "supports_claim": true,
+        "confidence": 0.95,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-origin"
+      },
+      {
+        "id": "repost_C",
+        "observed_root": "rumour-origin",
+        "supports_claim": true,
+        "confidence": 0.97,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-origin"
+      },
+      {
+        "id": "repost_D",
+        "observed_root": "rumour-origin",
+        "supports_claim": true,
+        "confidence": 0.96,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-origin"
+      },
+      {
+        "id": "repost_E",
+        "observed_root": "rumour-origin",
+        "supports_claim": true,
+        "confidence": 0.94,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-origin"
+      },
+      {
+        "id": "supply-audit",
+        "observed_root": "warehouse-log",
+        "supports_claim": false,
+        "confidence": 0.82,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "warehouse-log"
+      },
+      {
+        "id": "driver-manifest",
+        "observed_root": "fleet-ledger",
+        "supports_claim": false,
+        "confidence": 0.86,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "fleet-ledger"
+      }
+    ]
+  },
+  "independently_confirmed_true": {
+    "title": "Three independent confirmations of a true event",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": true,
+    "severity": "high",
+    "attack_description": "Benign case: oversight should not always refuse; three independent sources genuinely support the claim.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "warehouse-log-1",
+        "observed_root": "warehouse-log",
+        "supports_claim": true,
+        "confidence": 0.88,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "warehouse-log"
+      },
+      {
+        "id": "driver-log-2",
+        "observed_root": "fleet-ledger",
+        "supports_claim": true,
+        "confidence": 0.84,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "fleet-ledger"
+      },
+      {
+        "id": "hospital-report-3",
+        "observed_root": "hospital-sensor",
+        "supports_claim": true,
+        "confidence": 0.93,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "hospital-sensor"
+      },
+      {
+        "id": "social-media",
+        "observed_root": "social-feed",
+        "supports_claim": false,
+        "confidence": 0.52,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "social-feed"
+      }
+    ]
+  },
+  "mixed_unknown": {
+    "title": "Split sources with unknown ground truth",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": null,
+    "severity": "medium",
+    "attack_description": "Truth intentionally unspecified: successful behaviour means recording uncertainty, not guessing truth.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "report-a",
+        "observed_root": "source-1",
+        "supports_claim": true,
+        "confidence": 0.82,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "source-1"
+      },
+      {
+        "id": "report-b",
+        "observed_root": "source-2",
+        "supports_claim": true,
+        "confidence": 0.89,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "source-2"
+      },
+      {
+        "id": "report-c",
+        "observed_root": "source-3",
+        "supports_claim": false,
+        "confidence": 0.78,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "source-3"
+      },
+      {
+        "id": "report-d",
+        "observed_root": "source-4",
+        "supports_claim": false,
+        "confidence": 0.86,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "source-4"
+      }
+    ]
+  },
+  "intervention_feedback": {
+    "title": "Intervention creates circular evidence",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": false,
+    "severity": "high",
+    "attack_description": "Reports triggered by an intervention are misused as proof for its original hypothesis. These must be tagged.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "policy-generated-1",
+        "observed_root": "intervention-1",
+        "supports_claim": true,
+        "confidence": 0.99,
+        "intervention_generated": true,
+        "actual_root_for_scoring": "intervention-1"
+      },
+      {
+        "id": "policy-generated-2",
+        "observed_root": "intervention-2",
+        "supports_claim": true,
+        "confidence": 0.98,
+        "intervention_generated": true,
+        "actual_root_for_scoring": "intervention-2"
+      },
+      {
+        "id": "reactive-alert-3",
+        "observed_root": "intervention-3",
+        "supports_claim": true,
+        "confidence": 0.97,
+        "intervention_generated": true,
+        "actual_root_for_scoring": "intervention-3"
+      },
+      {
+        "id": "independent-a",
+        "observed_root": "warehouse-log",
+        "supports_claim": false,
+        "confidence": 0.8,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "warehouse-log"
+      },
+      {
+        "id": "independent-b",
+        "observed_root": "fleet-ledger",
+        "supports_claim": false,
+        "confidence": 0.87,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "fleet-ledger"
+      },
+      {
+        "id": "uninformed-witness",
+        "observed_root": "social-feed",
+        "supports_claim": true,
+        "confidence": 0.58,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "social-feed"
+      }
+    ]
+  },
+  "spoofed_source_origins": {
+    "title": "Spoofed provenance defeats the toy Arbiter",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": false,
+    "severity": "critical",
+    "attack_description": "Red-team: reports falsely claim distinct root IDs, but ground-truth lineage identifies one corrupted origin. Detection is NOT implemented: expected Arbiter failure.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "fabricated-a",
+        "observed_root": "claimed-sensor-A",
+        "supports_claim": true,
+        "confidence": 0.99,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "attacker-root"
+      },
+      {
+        "id": "fabricated-b",
+        "observed_root": "claimed-camera-B",
+        "supports_claim": true,
+        "confidence": 0.99,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "attacker-root"
+      },
+      {
+        "id": "fabricated-c",
+        "observed_root": "claimed-operator-C",
+        "supports_claim": true,
+        "confidence": 0.99,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "attacker-root"
+      },
+      {
+        "id": "real-audit",
+        "observed_root": "warehouse-log",
+        "supports_claim": false,
+        "confidence": 0.85,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "warehouse-log"
+      }
+    ]
+  },
+  "single_source_true": {
+    "title": "True event, insufficient independently verified evidence",
+    "claim": "Emergency medical-supply corridor has failed",
+    "ground_truth": true,
+    "severity": "critical",
+    "attack_description": "Red-team: stricter independence rules may withhold a justified alert when only one authentic observer is available. Expected Arbiter false negative.",
+    "domain_context": {
+      "infrastructure": "Simulated power system may face an outage",
+      "communications": "Communications status uncertain",
+      "logistics": "Medical supply delivery may be delayed",
+      "economics": "Financial services are unaffected in this toy scenario",
+      "narrative": "Reports are inconsistent across copies of a news feed",
+      "cognition": "Alert fatigue is a possible hypothetical concern",
+      "deterrence": "No kinetic or retaliatory action is modelled",
+      "population": "Hospitals require reliable electricity and medicines"
+    },
+    "evidence": [
+      {
+        "id": "solo-verified",
+        "observed_root": "hospital-sensor",
+        "supports_claim": true,
+        "confidence": 0.99,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "hospital-sensor"
+      },
+      {
+        "id": "false-dismissal-1",
+        "observed_root": "rumour-downplay",
+        "supports_claim": false,
+        "confidence": 0.85,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-downplay"
+      },
+      {
+        "id": "false-dismissal-2",
+        "observed_root": "rumour-downplay",
+        "supports_claim": false,
+        "confidence": 0.84,
+        "intervention_generated": false,
+        "actual_root_for_scoring": "rumour-downplay"
+      }
+    ]
+  }
+}
