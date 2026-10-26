@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If citing this conceptual research website, please cite the author and version; do not cite its synthetic simulations as independent validation."
+title: "The Architect: Hybrid Sovereign Peace Doctrine and The Arbiter"
+type: website
+authors:
+  - family-names: "Dincă"
+    given-names: "Grigore"
+version: "0.1"
+date-released: "2026-10-26"
+abstract: "Public-facing source-conscious description of the HSPD research programme and the proposed Arbiter epistemic oversight agent."

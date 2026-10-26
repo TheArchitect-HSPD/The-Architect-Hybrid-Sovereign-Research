@@ -1,0 +1,12 @@
+# Local development files, sensitive drafts and private archives
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+private/
+original-documents/
+*.docx
+*.pdf
+*.key
+*.pem
