@@ -4,7 +4,7 @@
 
 The October 2026 browser workbenches remain deterministic, but they are no longer the entire research programme. A separate private Windows sandbox now launches real, role-specific LLM calls in local worker processes. The pilot uses four model identifiers across **three provider gateways** (OpenAI, Anthropic and Adaption), with an independent model Arbiter.
 
-Fourteen distinct specialist IDs have passed at least one real LLM assessment in results shared for review. Five of these are the Gemma 4 26B replacement pool; each passed individually. The operator reports completion of the last six specialists, but the final report was not provided for this site update. A single coordinated 20-specialist plus Arbiter run with `full_21_live: true` remains **unverified** here.
+All twenty specialists and the separate Arbiter were reported as completing a single synthetic HSPD-SAFE-ATTACK run. The operator's full-run console output displayed `PASS_ALL_REQUIRED_LIVE`, `expected_real_model_assessments: 21`, `observed_real_model_assessments: 21`, `failed_agent_ids: []`, `enforced_decision: REQUEST_HUMAN_REVIEW`, and `real_world_actions_enabled: false`. The complete local JSON report has not been independently audited or published. This represents successful real-inference integration on one synthetic scenario, not scientific validation of doctrine effectiveness.
 
 The private SHIELD 21 regression suite passed 339 offline software tests in the latest reviewed GitHub Actions log. This supports software integrity checks, not the correctness of geopolitical inference, inference reproducibility over multiple model samples, or external peer-reviewed effectiveness.
 
