@@ -1,0 +1,70 @@
+name: Publish SHIELD 21 research status to the original homepage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - shield21.html
+      - tools/refresh_shield21_home.py
+      - .github/workflows/refresh_shield21_home.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shield21-homepage-status
+  cancel-in-progress: false
+
+jobs:
+  refresh-homepage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout the public website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify insertion logic without changing any public files
+        run: |
+          python -m py_compile tools/refresh_shield21_home.py
+          python - <<'PY'
+          from tools.refresh_shield21_home import inject, START, END
+          original = '<!doctype html><html><body id="home"><main>Legacy lab</main></body></html>'
+          new = inject(original)
+          assert new.count(START) == 1
+          assert new.count(END) == 1
+          assert '<main>Legacy lab</main>' in new
+          assert inject(new) == new
+          print('PASS: old homepage research lab intact, idempotent status banner')
+          PY
+      - name: Insert November 2026 status into the 4.8 MB homepage
+        run: python tools/refresh_shield21_home.py
+      - name: Verify no original research material was removed
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.refresh_shield21_home import START, END
+          site = Path('index.html').read_text(encoding='utf-8')
+          assert len(site) > 4_500_000, 'Unexpected homepage size'
+          assert site.count(START) == 1
+          assert site.count(END) == 1
+          assert 'href="shield21.html"' in site
+          print('PASS: large original homepage retained and research update linked')
+          PY
+      - name: Publish updated homepage in main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "Homepage already up to date"
+          else
+            git commit -m "Publish SHIELD 21 live research status on the existing homepage"
+            git push origin HEAD:main
+          fi
