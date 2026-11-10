@@ -40,7 +40,7 @@ def inject(source: str) -> str:
         if end <= start:
             raise ValueError("Invalid marker order")
         return source[:start] + BANNER + source[end:]
-    match = re.search(r"<body\\b[^>]*>", source, flags=re.IGNORECASE)
+    match = re.search(r"<body\b[^>]*>", source, flags=re.IGNORECASE)
     if match is None:
         raise ValueError("Homepage has no opening body element")
     return source[:match.end()] + "\n" + BANNER + source[match.end():]
