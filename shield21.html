@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080e19">
+  <title>HSPD SHIELD 21 | Live federation research | The Architect</title>
+  <meta name="description" content="November 2026 research update: twenty HSPD specialists, four hosted model pools, a separate Arbiter and human safety gate. Live assessment record, failures and limits.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .site-shell{max-width:1170px;margin:auto;padding:0 24px}
+    .site-nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:22px 0;border-bottom:1px solid #33465b}
+    .site-nav .brand{font-size:.87rem;letter-spacing:.13em;font-weight:800;color:#e5f4f5}.site-nav .brand span{display:block;color:#6ad5cb;font-size:.65rem;margin-top:4px;letter-spacing:.17em}
+    .site-nav .links{display:flex;gap:20px;flex-wrap:wrap;font-size:.81rem;font-weight:700;color:#b9cde0}.site-nav a:hover{color:#79e2d7}
+    .hero-new{padding:72px 0 48px;border-bottom:1px solid #27374d;position:relative}
+    .hero-new:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 30%,#1c4c5950,transparent 56%);pointer-events:none}
+    .hero-new>*{position:relative}
+    .eyebrow-new{font-size:.71rem;color:#7ee2d5;letter-spacing:.19em;text-transform:uppercase;font-weight:800}
+    .hero-new h1{max-width:850px;font:400 clamp(2.7rem,6.2vw,5.3rem)/1.05 Georgia,serif;letter-spacing:-.04em;margin:18px 0 20px}
+    .hero-new h1 strong{color:#76ded1;font-weight:400}
+    .lead-new{font-size:1.12rem;line-height:1.75;max-width:800px;color:#c1d3e2}
+    .status-row{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+    .tag-new{display:inline-flex;align-items:center;padding:8px 12px;background:#153137;border:1px solid #3b7974;color:#a7f0e4;border-radius:100px;font-weight:700;font-size:.74rem}
+    .tag-new.amber{background:#32291c;border-color:#806a46;color:#edc991}
+    .tag-new.dim{background:#192437;border-color:#41536d;color:#c0d1e4}
+    .stat-new-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:34px 0 15px}
+    .stat-new{background:#112037;border:1px solid #344b62;padding:21px 20px;border-radius:13px}
+    .stat-new b{font-size:2.5rem;font-weight:500;line-height:1;color:#ebf8ff;display:block}
+    .stat-new b.green{color:#91e3c0}.stat-new b.gold{color:#f5d29b}
+    .stat-new span{display:block;color:#b1c2d2;font-size:.78rem;margin-top:10px;line-height:1.5}
+    .small-print{font-size:.81rem;line-height:1.65;color:#aebed2}
+    .new-section{padding:57px 0;border-bottom:1px solid #243448}
+    .new-section h2{font:400 clamp(1.8rem,4vw,2.55rem)/1.15 Georgia,serif;margin:10px 0 18px}
+    .new-section .intro{color:#b6c9d9;max-width:780px;line-height:1.7;margin-bottom:25px}
+    .pool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .pool-card{background:#111e31;border:1px solid #2e4358;border-radius:13px;padding:24px}
+    .pool-card .count{float:right;color:#8edfd3;font-size:.83rem;font-weight:800}
+    .pool-card h3{font-size:1.12rem;margin:9px 0 6px}
+    .pool-card p{font-size:.82rem;line-height:1.65;color:#c2d1dc;margin:9px 0}
+    .pool-card .names{font-size:.76rem;color:#99b3c8;margin-top:15px}
+    .simple-table{width:100%;border-collapse:collapse}
+    .simple-table th{text-align:left;color:#9fcdcd;font-size:.76rem;letter-spacing:.07em;border-bottom:1px solid #41546c;padding:13px 12px}
+    .simple-table td{border-bottom:1px solid #26394c;padding:14px 12px;color:#d4e0ea;font-size:.85rem}
+    .simple-table td:first-child{font-weight:700}
+    .table-scroller{overflow-x:auto;border:1px solid #2f4258;border-radius:12px}
+    .callout-new{border:1px solid #75613c;border-left:4px solid #e5bb78;background:#33281850;border-radius:8px;padding:18px 21px;color:#ecdbbd;line-height:1.7}
+    .callout-new p{margin:7px 0 0}
+    .two-new{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .panel-new{background:#112034;border:1px solid #30455c;border-radius:12px;padding:20px}
+    .panel-new h3{font-size:1rem;margin:4px 0 9px}.panel-new p{font-size:.85rem;line-height:1.67;color:#b9cbd9}
+    .link-new{color:#91eee2;text-decoration:underline;text-underline-offset:3px}
+    .footer-new{padding:30px 0 60px;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;color:#9eb2c4;font-size:.77rem}
+    .footer-new a{color:#a1e9df}
+    @media(max-width:760px){.stat-new-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pool-grid,.two-new{grid-template-columns:1fr}.site-nav .links{gap:12px}.hero-new{padding:45px 0 30px}}
+    @media(max-width:430px){.stat-new-grid{grid-template-columns:1fr 1fr}.stat-new{padding:15px}.stat-new b{font-size:2rem}.site-shell{padding:0 16px}}
+  </style>
+</head>
+<body>
+<a class="sr-only" href="#content">Skip to content</a>
+<div class="site-shell">
+  <header class="site-nav">
+    <a class="brand" href="./#home">THE ARCHITECT<span>HYBRID SOVEREIGN RESEARCH</span></a>
+    <nav class="links" aria-label="Research navigation">
+      <a href="./#home">Home</a>
+      <a href="architecture.html">Agents</a>
+      <a href="arbiter.html">Arbiter</a>
+      <a href="research.html">Research</a>
+      <a href="shield21.html" aria-current="page">SHIELD 21</a>
+      <a href="evidence.html">Evidence</a>
+    </nav>
+  </header>
+  <main id="content">
+    <section class="hero-new" id="overview">
+      <div class="eyebrow-new">Independent engineering programme | Updated 10 November 2026</div>
+      <h1>From a peace doctrine to <strong>a testable multi-model federation.</strong></h1>
+      <p class="lead-new">HSPD SHIELD 21 is the experimental implementation of twenty specialised assessment roles and a separate twenty-first Arbiter. Unlike the earlier rule-based website demonstrations, this research system has made real inference calls to hosted LLMs, with role-specific prompts and hash-pinned doctrine retrieval.</p>
+      <div class="status-row">
+        <span class="tag-new">Real LLM assessments observed</span>
+        <span class="tag-new amber">Full 21-agent run not yet evidenced here</span>
+        <span class="tag-new dim">Synthetic scenarios only</span>
+      </div>
+      <div class="stat-new-grid" aria-label="Reported research progress">
+        <div class="stat-new"><b>21</b><span>Designed roles: 20 specialists plus independent Arbiter</span></div>
+        <div class="stat-new"><b>4</b><span>Distinct model IDs in the current pilot allocation</span></div>
+        <div class="stat-new"><b class="green">14/20</b><span>Distinct specialist IDs with successful live assessments in shared logs</span></div>
+        <div class="stat-new"><b class="gold">339</b><span>Offline regression tests passed in the latest reviewed GitHub Actions run</span></div>
+      </div>
+      <p class="small-print">The operator has reported completion of the remaining six individual assessments, but their final JSON report has not been supplied for this public update. The 14/20 count is deliberately limited to evidence seen in the project record. Offline test counts measure software checks, not geopolitical efficacy or field safety.</p>
+    </section>
+
+    <section class="new-section" id="models">
+      <div class="eyebrow-new">Federation design</div><h2>Four model pools, five specialist roles each.</h2>
+      <p class="intro">Each role runs in a separate local worker process, calls its assigned model through an authenticated provider, and receives only its scoped evidence and doctrine context. Five workers sharing one model are five specialised processes, not five separately trained models.</p>
+      <div class="pool-grid">
+        <article class="pool-card"><span class="count">M01 · 5 roles</span><p class="eyebrow-new">OpenAI</p><h3>GPT 4.1 Mini</h3><p>General specialist assessment across infrastructure, causality and governance contexts.</p><div class="names">01 Aegaryn · 05 Narethyl · 09 Solvyr · 14 Varrun · 15 Farreth</div></article>
+        <article class="pool-card"><span class="count">M02 · 5 roles</span><p class="eyebrow-new">Anthropic</p><h3>Claude Haiku 5.5</h3><p>Specialist tasks including communication and cross-checking. Output allowance raised to 4,096 tokens after documented truncation.</p><div class="names">02 Veylith · 06 Myndovar · 10 Elyrion · 13 Kaelrix · 16 Elyndra</div></article>
+        <article class="pool-card"><span class="count">M03 · 5 roles</span><p class="eyebrow-new">Adaption</p><h3>Gemma 4 31B</h3><p>Doctrine-grounded specialist evaluation over technical, continuity and assurance responsibilities.</p><div class="names">03 Thariven · 07 Dravaryn · 11 Thornev · 17 Oathryn · 18 Synthera</div></article>
+        <article class="pool-card"><span class="count">M04 · 5 roles</span><p class="eyebrow-new">Adaption</p><h3>Gemma 4 26B</h3><p>Replacement for DeepSeek V4 Flash following reproducible output exhaustion. All five roles passed separate live assessments at 4,096 output tokens.</p><div class="names">04 Aurivex · 08 Hearthryn · 12 Orivane · 19 Scarveth · 20 Umbrakar</div></article>
+      </div>
+      <p class="small-print">These are four models across only three inference provider gateways. Both Gemma models share a model family and Adaption infrastructure, so they are not independent failure domains. The design supersedes the older seven-provider allocation <em>for this pilot only</em>.</p>
+    </section>
+
+    <section class="new-section" id="evidence">
+      <div class="eyebrow-new">Recorded experimental history</div><h2>What passed, what failed, what remains unverified.</h2>
+      <div class="table-scroller">
+        <table class="simple-table">
+          <thead><tr><th>Experiment</th><th>Observed result</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>Initial live pilot</td><td>4 specialist LLM replies + 1 Arbiter</td><td>Supported first real model connectivity; not a full federation test</td></tr>
+            <tr><td>Expanded stage, 12 specialists</td><td>8 specialists + Arbiter succeeded; 4 truncated</td><td>Anthropic agents 06 and 10; DeepSeek agents 08 and 12 encountered output exhaustion</td></tr>
+            <tr><td>Claude selective retry</td><td>Agents 06 and 10 passed</td><td>Increasing their output allowance to 4,096 resolved the observed truncation</td></tr>
+            <tr><td>DeepSeek retest</td><td>2 of 2 failed again</td><td>Reasoning used all 4,096 output tokens without final text</td></tr>
+            <tr><td>Qwen 3.8 27B probe</td><td>Agent 08 incomplete</td><td>3,598 reasoning tokens; partial text, but no complete assessment</td></tr>
+            <tr><td>Gemma 4 26B probes</td><td>5 of 5 separate specialist roles passed</td><td>Validated roles 04, 08, 12, 19 and 20; not a single coordinated federation trial</td></tr>
+            <tr><td>Remaining six specialists</td><td>Completion reported by operator</td><td>Local JSON output not yet inspected in this publication</td></tr>
+            <tr><td>Full 21-agent cohort</td><td>Not yet evidenced</td><td>Must verify all 20 specialist responses, separate Arbiter reply and deterministic safety gate in one run</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small-print">Evidence basis: operator-shared local outputs for November 2026 trials, private SHIELD 21 repository commits and GitHub Actions offline checks. These records show software behaviour; they are not blinded external peer review. Raw source documents, credentials, provider payloads and local private reports are deliberately not published here.</p>
+    </section>
+
+    <section class="new-section" id="arbiter">
+      <div class="eyebrow-new">Agent XXI</div><h2>The Arbiter remains separate from the assessment pools.</h2>
+      <p class="intro">The Arbiter receives the specialist assessments after their blind first pass. It examines disagreement, evidence independence and alternatives. Its proposed action does not override the code-enforced safety boundary.</p>
+      <div class="two-new">
+        <article class="panel-new"><h3>Independent final review</h3><p>Agent 21 has produced live LLM assessments using its own configured model and the pinned doctrine context. The fallback used in recorded pilots was OpenAI GPT 6.1 Sol. The Arbiter is a separate model call, not proof of independent evidence sources.</p></article>
+        <article class="panel-new"><h3>Deterministic action gate</h3><p>Partial coverage, invalid output, inadequate evidence or unresolved conflicts can lead to <code>REQUEST_HUMAN_REVIEW</code>. Real-world actions remain disabled, and human approval cannot be delegated to model consensus.</p></article>
+      </div>
+      <div class="callout-new" style="margin-top:20px"><strong>The boundary is deliberate.</strong><p>The SHIELD 21 research sandbox does not control critical infrastructure, surveillance systems, defensive weapons or real-world political processes. It tests text assessments of explicitly synthetic scenarios. The doctrine is not an authority over public belief, truth, justice or ideology.</p></div>
+    </section>
+
+    <section class="new-section" id="limits">
+      <div class="eyebrow-new">Research integrity</div><h2>What this milestone does not establish.</h2>
+      <div class="two-new">
+        <div class="panel-new"><h3>No external accuracy claim</h3><p>Successful JSON responses demonstrate model connectivity and schema compliance, not correct attribution, truth, peace outcomes or intervention efficacy. Expert review, controlled baselines and preregistered adversarial replication remain open.</p></div>
+        <div class="panel-new"><h3>No autonomous sovereignty</h3><p>Agents are specialised worker processes with scoped prompts and retrieved doctrine. They are not newly trained minds. The system provides no autonomous power or validated authority to adjudicate human political disputes.</p></div>
+        <div class="panel-new"><h3>Common-mode risks remain</h3><p>Two Gemma-family models behind the same gateway can share mistakes, outages, quota restrictions and model-family bias. Correlated agreement must not be mistaken for independent corroboration.</p></div>
+        <div class="panel-new"><h3>No live Pages inference</h3><p>This public site is documentation, not an inference dashboard. The original embedded browser workbenches are offline, deterministic research demonstrations. The live LLM experiments ran separately in the operator's Windows sandbox.</p></div>
+      </div>
+    </section>
+
+    <section class="new-section" id="next">
+      <div class="eyebrow-new">Next reproducible milestone</div><h2>One complete, fail-closed cohort run.</h2>
+      <p class="intro">Require all 20 specialist processes and the distinct Arbiter to return real LLM assessments on one synthetic event. Audit missing agents, rejected outputs, model provenance, simulated substitutes, evidence citations, resource use, dissent and safety-gate decisions. Then expand to preregistered negative controls and independent adversarial review.</p>
+      <p><a class="link-new" href="research.html">Research and validation plan</a> &nbsp; · &nbsp; <a class="link-new" href="architecture.html">21-agent design</a> &nbsp; · &nbsp; <a class="link-new" href="evidence.html">Documentary provenance</a> &nbsp; · &nbsp; <a class="link-new" href="RESEARCH_LIMITATIONS.md">Research limitations</a></p>
+    </section>
+  </main>
+  <footer class="footer-new">
+    <span>The Architect · Hybrid Sovereign Peace Doctrine · November 2026 research update</span>
+    <span>Independent research · Synthetic evaluation only · No institutional endorsement</span>
+  </footer>
+</div>
+</body>
+</html>
