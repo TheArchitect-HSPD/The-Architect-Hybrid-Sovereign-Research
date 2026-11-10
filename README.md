@@ -1,30 +1,44 @@
-# The Architect — GitHub Pages navigation repair v0.5
+# The Architect / Hybrid Sovereign Research
 
-## What this fixes
-The earlier releases expected nested `agents/`, `arbiter/` and `sandbox/` folders to be deployed intact. Missing or misplaced folders produced 404 responses from an older `404.html` that also had a broken relative return link.
+The public GitHub Pages site documents the Hybrid Sovereign Peace Doctrine (HSPD), the proposed twenty-one-role architecture, the Arbiter, historical synthetic research, and the November 2026 HSPD SHIELD 21 hosted LLM assessment pilot.
 
-This **self-contained root `index.html` embeds all three existing research tools in full**: their HTML, CSS, scripts, full 7,087-passage doctrine corpus, 20-agent profiles, evidence-gate demo and synthetic sandbox. Internal links use root hash navigation; the research tools do not require any extra files or folders.
+**Current live research status (10 November 2026):** Four hosted LLM model pools cover twenty specialist roles, with a separate LLM Arbiter. Operator-shared reports demonstrate real LLM assessments by fourteen distinct specialists. Completion of the final six was reported but not accompanied by the final JSON log in the public update. A complete simultaneous 21-agent federation result remains unverified here.
 
-The included `404.html` redirects old directory URLs to the corresponding embedded workspace on the homepage, and uses an absolute project-root return path.
+The original, very large `index.html` embeds the October 2026 browser research workbenches and a doctrine corpus. Those browser workbenches remain deterministic demonstrations. They do not connect directly to the private HSPD SHIELD 21 Windows sandbox.
 
-## Installation — ONLY TWO FILES NEEDED
-1. Open your GitHub repository at `https://github.com/TheArchitect-HSPD/The-Architect-Hybrid-Sovereign-Research/`.
-2. In the repository file list, use **Add file → Upload files**.
-3. Drag in `index.html` and `404.html` from this repair package, **not the ZIP itself**. Confirm they appear at the same level as the existing README, not inside another folder.
-4. Commit changes to `main`. Wait for the Pages deployment shown in **Actions** or **Settings → Pages**.
-5. Open `https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/` and use links to the three workbenches.
-6. Hard refresh with Ctrl+F5 to avoid cached old navigation. Existing old folders may remain; the repaired homepage no longer needs them.
+## Start here
 
-## Single-file deep links
-- `/#agent-library` — 20 Agent Doctrine Library
-- `/#arbiter-lab` — Arbiter research workbench
-- `/#arbiter-gate` — evidence gate tab
-- `/#experimental-sandbox` — synthetic testbed
+1. [Homepage](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/#home) displays the latest research announcement above the preserved historical workbenches.
+2. [HSPD SHIELD 21 update](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/shield21.html) explains four model pools, live successes and failures, corrections, the Arbiter and remaining experimental limits.
+3. [Architecture](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/architecture.html) describes all twenty roles and the Arbiter.
+4. [Research](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/research.html) distinguishes the historical synthetic exercises from hosted LLM research.
+5. [Evidence ledger](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/evidence.html) identifies source types and evidentiary limits.
 
-Full public URL must include the repository name before the hash.
+## November 2026 work
 
-## Limitations
-This is a static GitHub Pages implementation, not running independent AI models. Source-authenticity, real-world evidence and model verdicts are not independently verified. User-supplied doctrine manuscripts are embedded in the single file, meaning they are publicly readable if deployed.
+The experimental SHIELD 21 federation uses four specialist model pools of five worker roles each: OpenAI GPT 4.1 Mini, Anthropic Claude Haiku 5.5, Gemma 4 31B via Adaption, and Gemma 4 26B via Adaption. The Arbiter is separate and was evaluated with OpenAI GPT 6.1 Sol in the reported trials. Two of the models use the same family and inference gateway, so their outputs are not independent corroboration. Agents use local isolated processes with scoped doctrine retrieval, not separately trained weights.
 
-## Compatibility
-No external JavaScript, stylesheets or fonts. Tested using local Chromium with GitHub Pages-style subpath hosting. The iframe workbenches are embedded via srcdoc and scripts are inlined; no network calls are used.
+An expanded pilot exposed real output-budget failures. Anthropic truncation was resolved with larger output ceilings for agents 06 and 10. DeepSeek V4 Flash used its entire reasoning-token allowance without final text on agents 08 and 12; Qwen 3.8 27B also returned an incomplete assessment. Gemma 4 26B then passed all five fourth-pool roles individually at a 4,096-token budget. The reported local offline suite passed 339 tests.
+
+This is software and model compatibility evidence, not a validated prediction of geopolitical events, institutional endorsement, operational control or proof that the doctrine's peace KPIs are achievable.
+
+## Privacy and safety
+
+The public website contains no API keys, local federation result JSON, private runtime configuration or new unpublished doctrine document uploads. The original October 2026 homepage already includes embedded doctrine passages, so repository publication settings and intellectual property implications require the author's review.
+
+The LLM federation is restricted to explicitly synthetic scenarios, has no real-world actuation and enforces human review through a deterministic gate. The Arbiter is an epistemic reviewer, not an authority over political truth, public belief, justice or ideology.
+
+## Legacy documentation
+
+The previous website release was a self-contained homepage navigation repair. The root HTML embeds earlier doctrine library, Arbiter Lab and toy sandbox tools. The original deep links remain:
+
+* `/#agent-library` for the historical doctrine library
+* `/#arbiter-lab` for the deterministic Arbiter workbench
+* `/#arbiter-gate` for its evidence-gate tab
+* `/#experimental-sandbox` for the synthetic browser sandbox
+
+The large `index.html` is updated by the guarded `tools/refresh_shield21_home.py` script and its GitHub Actions workflow, which insert a short status announcement without replacing the embedded research material.
+
+See [Research limitations](RESEARCH_LIMITATIONS.md), [research protocol](RESEARCH_PROTOCOL.md), and [citation metadata](CITATION.cff).
+
+© The Architect. Publishing this website does not grant an open-source licence to the underlying doctrine or manuscripts.
