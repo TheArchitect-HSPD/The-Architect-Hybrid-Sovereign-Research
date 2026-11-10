@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#080e19">
   <title>HSPD SHIELD 21 | Live federation research | The Architect</title>
-  <meta name="description" content="November 2026 research update: twenty HSPD specialists, four hosted model pools, a separate Arbiter and human safety gate. Live assessment record, failures and limits.">
+  <meta name="description" content="November 2026: coordinated 21 of 21 real LLM assessments passed on the synthetic HSPD SHIELD 21 scenario. Four model pools, separate Arbiter, deterministic human-review gate, no real-world actuation.">
   <link rel="stylesheet" href="style.css">
   <style>
     .site-shell{max-width:1170px;margin:auto;padding:0 24px}
@@ -76,16 +76,16 @@
       <p class="lead-new">HSPD SHIELD 21 is the experimental implementation of twenty specialised assessment roles and a separate twenty-first Arbiter. Unlike the earlier rule-based website demonstrations, this research system has made real inference calls to hosted LLMs, with role-specific prompts and hash-pinned doctrine retrieval.</p>
       <div class="status-row">
         <span class="tag-new">Real LLM assessments observed</span>
-        <span class="tag-new amber">Full 21-agent run not yet evidenced here</span>
+        <span class="tag-new">Full cohort: 21/21 passed in operator console output</span>
         <span class="tag-new dim">Synthetic scenarios only</span>
       </div>
       <div class="stat-new-grid" aria-label="Reported research progress">
         <div class="stat-new"><b>21</b><span>Designed roles: 20 specialists plus independent Arbiter</span></div>
         <div class="stat-new"><b>4</b><span>Distinct model IDs in the current pilot allocation</span></div>
-        <div class="stat-new"><b class="green">14/20</b><span>Distinct specialist IDs with successful live assessments in shared logs</span></div>
+        <div class="stat-new"><b class="green">21/21</b><span>Accepted real LLM assessments: 20 specialists and The Arbiter in one run</span></div>
         <div class="stat-new"><b class="gold">339</b><span>Offline regression tests passed in the latest reviewed GitHub Actions run</span></div>
       </div>
-      <p class="small-print">The operator has reported completion of the remaining six individual assessments, but their final JSON report has not been supplied for this public update. The 14/20 count is deliberately limited to evidence seen in the project record. Offline test counts measure software checks, not geopolitical efficacy or field safety.</p>
+      <p class="small-print">The full federation completed with PASS_ALL_REQUIRED_LIVE, 21 expected and 21 observed model assessments, no failed agents, and REQUEST_HUMAN_REVIEW enforced. The primary evidence available for this public update is operator-shared console output, not a separately audited full JSON report. Offline test counts measure software checks, not geopolitical efficacy or field safety.</p>
     </section>
 
     <section class="new-section" id="models">
@@ -112,10 +112,16 @@
             <tr><td>DeepSeek retest</td><td>2 of 2 failed again</td><td>Reasoning used all 4,096 output tokens without final text</td></tr>
             <tr><td>Qwen 3.8 27B probe</td><td>Agent 08 incomplete</td><td>3,598 reasoning tokens; partial text, but no complete assessment</td></tr>
             <tr><td>Gemma 4 26B probes</td><td>5 of 5 separate specialist roles passed</td><td>Validated roles 04, 08, 12, 19 and 20; not a single coordinated federation trial</td></tr>
-            <tr><td>Remaining six specialists</td><td>Completion reported by operator</td><td>Local JSON output not yet inspected in this publication</td></tr>
-            <tr><td>Full 21-agent cohort</td><td>Not yet evidenced</td><td>Must verify all 20 specialist responses, separate Arbiter reply and deterministic safety gate in one run</td></tr>
+            <tr><td>Remaining six specialists</td><td>Completion reported by operator</td><td>The complete cohort includes all six, but their prior selective-run report was not separately inspected for this publication</td></tr>
+            <tr><td>Full 21-agent cohort</td><td>PASS_ALL_REQUIRED_LIVE: 21/21</td><td>HSPD-SAFE-ATTACK; 20 specialist assessments, 1 Arbiter assessment, zero failed agents, enforced REQUEST_HUMAN_REVIEW; no real-world actions</td></tr>
           </tbody>
         </table>
+      </div>
+      <div class="pool-card" style="margin:25px 0">
+        <span class="eyebrow-new">Latest complete-cohort synthetic test</span>
+        <h3>HSPD-SAFE-ATTACK · 21/21 live LLM assessments</h3>
+        <p>All twenty specialist model workers returned accepted assessments. Eight requested human review, five proposed monitoring, five proposed further simulation, and two abstained. The distinct model Arbiter completed final review. The enforced safety decision was <code>REQUEST_HUMAN_REVIEW</code>; no real-world actuation was enabled.</p>
+        <p class="small-print">Evidence boundary: these figures come from the operator's PowerShell output of <code>results/five_pools_all21.json</code>. The underlying local report has not been independently inspected or published. This is a successful live system integration test, not proof of external accuracy, model independence or real-world deployment.</p>
       </div>
       <p class="small-print">Evidence basis: operator-shared local outputs for November 2026 trials, private SHIELD 21 repository commits and GitHub Actions offline checks. These records show software behaviour; they are not blinded external peer review. Raw source documents, credentials, provider payloads and local private reports are deliberately not published here.</p>
     </section>
@@ -141,8 +147,8 @@
     </section>
 
     <section class="new-section" id="next">
-      <div class="eyebrow-new">Next reproducible milestone</div><h2>One complete, fail-closed cohort run.</h2>
-      <p class="intro">Require all 20 specialist processes and the distinct Arbiter to return real LLM assessments on one synthetic event. Audit missing agents, rejected outputs, model provenance, simulated substitutes, evidence citations, resource use, dissent and safety-gate decisions. Then expand to preregistered negative controls and independent adversarial review.</p>
+      <div class="eyebrow-new">Next reproducible milestone</div><h2>Independent adversarial replication and audit.</h2>
+      <p class="intro">The first complete-cohort inference test now passes. The next stage is to inspect and archive the complete machine-readable result, rerun multiple controlled scenarios and negative controls, measure output variability and costs, verify source provenance and model correlations, then invite independent, preregistered adversarial replication. Successful model responses alone are not a measure of doctrine efficacy.</p>
       <p><a class="link-new" href="research.html">Research and validation plan</a> &nbsp; · &nbsp; <a class="link-new" href="architecture.html">21-agent design</a> &nbsp; · &nbsp; <a class="link-new" href="evidence.html">Documentary provenance</a> &nbsp; · &nbsp; <a class="link-new" href="RESEARCH_LIMITATIONS.md">Research limitations</a></p>
     </section>
   </main>
