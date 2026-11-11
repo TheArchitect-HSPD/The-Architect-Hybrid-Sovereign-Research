@@ -84,6 +84,7 @@ def main():
     p.add_argument("--authorise-cloud-doctrine", action="store_true")
     p.add_argument("--start-case", type=int, default=1)
     p.add_argument("--count", type=int, default=1)
+    p.add_argument("--continue-on-incomplete", action="store_true", help="Preserve failed reports, continue next case without retries")
     a = p.parse_args()
     if a.start_case < 1 or a.count < 1 or a.start_case + a.count > 31:
         p.error("Choose cases within 1 to 30")
@@ -104,6 +105,8 @@ def main():
     env = os.environ.copy()
     env.update({"HSPD_STRICT_DOCTRINE":"1", "HSPD_DOCTRINE_MODE":"required",
                 "HSPD_ALLOW_DOCTRINE_CLOUD":"1"})
+    failures = []
+    completed = 0
     for case in selected:
         event = event_for(case)
         label = case["id"]
@@ -119,13 +122,35 @@ def main():
         result = subprocess.run(args, cwd=ROOT, env=env, timeout=1200,
                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         if result.returncode or not report_path.exists():
-            raise SystemExit("Runner error or missing report; stopped without automatic retry")
-        valid = check_report(report_path, label)
-        print(label, "valid live receipts:", len(valid), "/6",
-              "missing:", ", ".join(sorted(set(AGENTS)-valid)) or "none")
+            message = "Runner returned nonzero status or no report"
+            print(label, "ERROR:", message, flush=True)
+            failures.append({"case_id": label, "error": message})
+            if not a.continue_on_incomplete:
+                raise SystemExit("Incomplete live case. Stopping.")
+            continue
+        try:
+            valid = check_report(report_path, label)
+            missing = sorted(set(AGENTS) - valid)
+            print(label, "valid live receipts:", len(valid), "/6",
+                  "missing:", ", ".join(missing) or "none", flush=True)
+        except (ValueError, TypeError, KeyError, RuntimeError, OSError, json.JSONDecodeError) as exc:
+            print(label, "INVALID REPORT:", type(exc).__name__, str(exc)[:160], flush=True)
+            failures.append({"case_id": label, "error": type(exc).__name__})
+            if not a.continue_on_incomplete:
+                raise SystemExit("Invalid report. Stopping.")
+            continue
         if valid != set(AGENTS):
-            raise SystemExit("Incomplete six-model trial. Stopping.")
-    print("All requested live receipts complete. Doctrine effectiveness NOT proven.")
+            failures.append({"case_id": label, "missing_agents": missing})
+            if not a.continue_on_incomplete:
+                raise SystemExit("Incomplete six-model trial. Stopping.")
+        else:
+            completed += 1
+    print("Batch outcome:", completed, "complete of", len(selected),
+          "| incomplete or failed:", len(failures))
+    if failures:
+        print("Retained incomplete cases:", ", ".join(f["case_id"] for f in failures))
+    print("Doctrine effectiveness NOT proven.")
+
 
 if __name__ == "__main__":
     main()
