@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ("lab.html", "shield21.html", "research.html", "architecture.html",
+PAGES = ("lab.html", "trial001.html", "shield21.html", "research.html", "architecture.html",
          "arbiter.html", "evidence.html", "about.html")
 
 class Collector(HTMLParser):
@@ -66,6 +66,13 @@ def check():
                  "assets/emblem.svg","dataset.js","engine_browser.js"):
         if not (ROOT / name).is_file():
             errors.append("Missing required asset: "+name)
+    trial = (ROOT / "trial001.html").read_text(encoding="utf-8")
+    for control in ("trial-metrics", "trial-case-table", "trial-files", "trial-audit-results", "trial-download"):
+        if f'id="{control}"' not in trial:
+            errors.append("Missing TRIAL001 dashboard control: "+control)
+    for name in ("assets/trial001.js", "trial001_status.json"):
+        if not (ROOT / name).is_file():
+            errors.append("Missing TRIAL001 resource: "+name)
     if errors:
         for err in errors: print("FAIL:",err)
         raise SystemExit(1)
