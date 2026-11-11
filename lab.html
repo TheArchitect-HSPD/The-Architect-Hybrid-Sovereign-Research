@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e19">
+<title>Interactive HSPD research lab | The Architect</title>
+<meta name="description" content="Run reproducible offline synthetic HSPD evidence and Arbiter exercises, edit sources, inspect 21-role traces, and review local live federation reports.">
+<link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/lab.css">
+<script src="assets/app.js" defer></script>
+<script src="dataset.js" defer></script>
+<script src="engine_browser.js" defer></script>
+<script src="assets/lab.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-wrap wrap">
+<a class="brand" href="./#home"><img src="assets/emblem.svg" width="36" height="36" alt=""><span><strong>THE ARCHITECT</strong><small>HYBRID SOVEREIGN RESEARCH</small></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+<nav class="site-nav" id="site-nav" aria-label="Research navigation">
+<a href="./#home">Home</a><a href="architecture.html">21 roles</a><a href="arbiter.html">Arbiter</a><a href="research.html">Research</a><a href="shield21.html">SHIELD 21</a><a href="evidence.html">Evidence</a><a href="lab.html" aria-current="page">Interactive Lab</a>
+</nav></div></header>
+<main id="main" class="wrap">
+<section class="page-hero lab-hero"><p class="eyebrow accent">Interactive experimental environment | Browser only</p><h1>HSPD Research <span class="lab-accent">Laboratory</span></h1>
+<p class="hero-description">Test evidence independence, compare majority voting with the deterministic Arbiter policy, inspect all 21 role-labelled traces, and open saved federation assessments. The tests run entirely in your browser. They are <strong>not live LLM inference</strong> and cannot operate infrastructure.</p>
+<div class="lab-status"><span>Deterministic browser tests available</span><span>21 role traces</span><span>No API keys or uploads</span></div>
+<div class="lab-cautions"><strong>Live federation:</strong> The five-specialist plus Arbiter hosted LLM experiment runs in a separate private Windows sandbox. Public GitHub Pages cannot safely connect to that local process or hold provider secrets. You can inspect its exported reports here, but live model dispatch requires a separately deployed, authenticated backend.</div>
+</section>
+<div class="lab-tabs" role="tablist" aria-label="Laboratory modules">
+<button type="button" role="tab" aria-selected="true" aria-controls="panel-test" id="tab-test" data-tab="test">Scenario testing</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="panel-compose" id="tab-compose" data-tab="compose">Build a scenario</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="panel-trace" id="tab-trace" data-tab="trace">Agents and Arbiter</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="panel-import" id="tab-import" data-tab="import">Live report viewer</button>
+</div>
+<section class="lab-panel" role="tabpanel" aria-labelledby="tab-test" id="panel-test">
+<h2>Test the evidentiary decision rules</h2><p>Run the same synthetic evidence through three competing decision policies. Results are deterministic for the chosen fixture and seed.</p>
+<div class="lab-fields">
+<label>Scenario<select id="lab-scenario"></select></label>
+<label>Shuffle seed<input id="lab-seed" type="number" min="0" max="10000000" step="1" value="1"></label>
+</div>
+<div class="lab-actions"><button id="lab-run" class="lab-button" type="button">Run three policy tests</button><button id="lab-batch" class="lab-button secondary" type="button">Run 30-seed regression</button><button id="lab-export" class="lab-button secondary" type="button" disabled>Export JSON trace</button></div>
+<div id="lab-message" role="status" aria-live="polite"></div>
+<div class="lab-scenario-info" id="lab-scenario-info"></div>
+<div id="lab-result-cards" class="lab-results"></div>
+<h3>Evidence presented to the candidate policies</h3><div class="lab-scroll"><table><thead><tr><th>ID</th><th>Claimed upstream source</th><th>Supports</th><th>Input confidence</th><th>Intervention-created</th></tr></thead><tbody id="lab-evidence"></tbody></table></div>
+<h3>Arbiter policy warnings</h3><ul id="lab-alerts" class="lab-alerts"></ul>
+<h3>Evaluators only</h3><p class="lab-small">Hidden toy ground truth does not enter the candidate policy. Revealing it is for classroom analysis, not evidence authentication.</p><button id="lab-reveal" type="button" class="lab-button secondary">Reveal synthetic evaluator label</button><div id="lab-truth" role="status"></div>
+<div id="lab-batch-results"></div>
+</section>
+<section class="lab-panel" role="tabpanel" aria-labelledby="tab-compose" id="panel-compose" hidden>
+<h2>Design your own synthetic evidence test</h2><p>Enter a question and claimed source records. The browser reuses the same deterministic candidate policies. It cannot certify source identity or transform user assertions into authenticated evidence.</p>
+<div class="lab-fields"><label>Research question<input id="custom-question" maxlength="250" value="Has the fictional humanitarian supply corridor failed?"></label><label>Evidence ID<input id="custom-id" maxlength="70" placeholder="hospital-log-01"></label><label>Claimed source root<input id="custom-root" maxlength="70" placeholder="hospital-system"></label><label>Confidence, illustrative only<input id="custom-confidence" type="number" min="0" max="1" step=".01" value=".70"></label>
+<label class="lab-checkbox"><input id="custom-support" type="checkbox" checked> Record supports the claim</label><label class="lab-checkbox"><input id="custom-feedback" type="checkbox"> Generated by an intervention</label></div>
+<div class="lab-actions"><button class="lab-button" id="custom-add" type="button">Add evidence</button><button class="lab-button secondary" id="custom-run" type="button">Run custom test</button><button class="lab-button secondary" id="custom-reset" type="button">Clear draft</button></div>
+<div id="custom-feedback-text" role="status" aria-live="polite"></div>
+<div class="lab-scroll"><table><thead><tr><th>ID</th><th>Claimed root</th><th>Supports</th><th>Confidence</th><th>Action</th></tr></thead><tbody id="custom-list"></tbody></table></div>
+<p class="lab-small">For a novel problem, this toy test addresses source correlation and uncertainty. It does not evaluate constitutional feasibility or perform specialist LLM reasoning. Custom scenario inputs are not sent anywhere.</p>
+</section>
+<section class="lab-panel" role="tabpanel" aria-labelledby="tab-trace" id="panel-trace" hidden>
+<h2>Twenty specialist roles and The Arbiter</h2><p>These are labelled simulation steps generated by the offline policy engine, <strong>not</strong> separate AI agents. The trace follows the most recent scenario test.</p>
+<div class="lab-fields"><label>Filter role trace<input id="lab-filter" placeholder="e.g. Arbiter, provenance, evidence"></label></div>
+<p id="trace-count" class="lab-small"></p><div id="lab-trace" class="lab-trace"></div>
+</section>
+<section class="lab-panel" role="tabpanel" aria-labelledby="tab-import" id="panel-import" hidden>
+<h2>Inspect a real federation report</h2><p>Open a JSON report generated by the private Windows HSPD sandbox. The report stays on your device and is parsed locally. It is not uploaded to GitHub or sent to any model.</p>
+<label class="lab-import-label" for="lab-file">Choose a saved HSPD report (.json)</label>
+<input id="lab-file" type="file" accept=".json,application/json">
+<div class="lab-actions"><button class="lab-button secondary" id="lab-clear-file" type="button">Clear imported report</button></div>
+<div id="lab-file-msg" role="status" aria-live="polite"></div>
+<div id="lab-import-output"></div>
+<p class="lab-small">An imported receipt is operator-supplied data. This viewer cannot verify the original provider call, provenance of the report, model accuracy or strict doctrine consistency. Failed or absent agents remain visible.</p>
+</section>
+<section class="lab-panel" aria-labelledby="backend-heading"><h2 id="backend-heading">Live inference architecture</h2>
+<div class="lab-results"><article class="lab-result"><h3>Available here</h3><p>Six scenario fixtures, three deterministic comparison policies, interactive custom evidence, 21 labelled simulation traces, JSON export and offline inspection of real LLM reports.</p></article>
+<article class="lab-result"><h3>Requires private backend</h3><p>Real 5 plus 1 LLM dispatch, model credentials, pinned-doctrine retrieval, strict structured output validation, authenticated user access, usage limits, and safe server-side result storage. No credentials should ever appear in public JavaScript.</p></article></div>
+<p><a href="shield21.html#november11">Latest live pilot evidence</a> · <a href="RESEARCH_PROTOCOL.md">Research protocol</a> · <a href="RESEARCH_LIMITATIONS.md">Research limits</a> · <a href="research.html">Study design</a></p>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap foot-grid"><div><strong>THE ARCHITECT</strong><p>HSPD browser research lab. Reproducible synthetic tests and deliberate fail-closed interpretation.</p></div><div><strong>Not operational</strong><p>No autonomous control, targeting, surveillance, weapon operation or external actions. Model and source independence are not established by this offline test.</p></div><div><a href="./#home">Home</a><a href="shield21.html">SHIELD 21</a><a href="evidence.html">Evidence ledger</a></div></div></footer>
+</body></html>
