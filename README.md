@@ -22,6 +22,14 @@ An expanded pilot exposed real output-budget failures. Anthropic truncation was 
 
 The 21/21 live outcome demonstrates that the software can complete the full model assessment pipeline on one synthetic scenario. It does not demonstrate inference accuracy, a validated prediction of geopolitical events, institutional endorsement, operational control, or achievement of the doctrine's peace KPIs.
 
+## Six-role HSPD SHIELD 21 research update (11 November 2026)
+
+A separate local pilot assigned five specialist roles and one Arbiter to six model IDs: OpenAI GPT 4.1 Mini, Anthropic Claude Haiku 5.5, Adaption Gemma 4 31B, Adaption Qwen 3.8 27B, Adaption Qwen 3.5 397B, and OpenAI GPT 6.1 Sol. This pilot does **not** supersede or repeat the previously reported 21-role coordinated cohort.
+
+The operator reported 105/105 passing targeted regression tests and a successful six-role **mock** coordinator replay with no inference calls. In the live Delta72 V3 synthetic trial, five of six model receipts were valid, while Agent 05 exhausted its generation allocation. The structured BLACK MERIDIAN trial produced five successful specialist responses but an Arbiter output validation error. The plain-language BLACK MERIDIAN console trial produced four successful specialists plus a successful Arbiter; Agent 04 exhausted its 8,192-token output allowance, including 8,010 reported reasoning tokens. All three live trials were **incomplete at five of six**. Deterministic human review remained enforced, with no real-world control.
+
+A local human research console can save and dispatch fictional text scenarios after explicit cloud consent, and a read-only viewer can display saved assessment receipts. These are **local prototype tools**, not interactive features of the public site. The narrative drafts are not independently authenticated or structurally validated evidence. The saved local reports remain unpublished and unaudited. See [the dated research update](shield21.html#november11).
+
 ## Privacy and safety
 
 The public website contains no API keys, local federation result JSON, private runtime configuration or new unpublished doctrine document uploads. The original October 2026 homepage already includes embedded doctrine passages, so repository publication settings and intellectual property implications require the author's review.
