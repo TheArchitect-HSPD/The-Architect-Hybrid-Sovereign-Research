@@ -1,0 +1,49 @@
+name: Verify TRIAL 002 paired benchmark
+on:
+  push:
+    paths:
+      - "downloads/trial002.py"
+      - ".github/workflows/verify_trial002.yml"
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile trial harness
+        run: python -m py_compile downloads/trial002.py
+      - name: Generate synthetic cases without API credentials
+        run: python downloads/trial002.py --prepare
+      - name: Verify case count, hash and paired scoring structure
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("results/trial002")
+          cases=json.loads((root/"scenario_inputs.json").read_text())
+          truth=json.loads((root/"sealed_scoring_keys.json").read_text())
+          plan=json.loads((root/"preregistration.json").read_text())
+          assert len(cases)==len(truth)==60
+          assert len({x["scenario_id"] for x in cases})==60
+          assert {x["reference_action"] for x in truth}=={"MONITOR","SIMULATE_REPLAN","REQUEST_HUMAN_REVIEW"}
+          assert plan["model_call_budget_logical"]==720
+          assert all(x.get("classification")=="SYNTHETIC TEST DATA ONLY" for x in cases)
+          assert all("reference_action" not in x for x in cases)
+          print("60 paired cases validated")
+          PY
+      - name: Score empty trial as unproven rather than success
+        run: |
+          python downloads/trial002.py --evaluate
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("results/trial002/trial002_evaluation.json").read_text())
+          assert r["cases_with_two_complete_six_model_federations"]==0
+          assert r["model_conclusion"]=="NO_PREDECLARED_COMPARATIVE_SUCCESS"
+          print("Empty trial correctly inconclusive")
+          PY
