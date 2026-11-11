@@ -40,7 +40,7 @@ The repository restores `assets/app.js` and `assets/emblem.svg` for existing pag
 
 ## TRIAL 001 live pilot results ledger (11 November 2026)
 
-The operator has reported the first three completed **six-role live LLM trials**, synthetic cases `HSPD-TRIAL001-01`, `HSPD-TRIAL001-02` and `HSPD-TRIAL001-03`. The local console printed `valid live receipts: 6 /6 missing: none` for each case, after an offline preflight. This is **3 reported completed cases of 30 planned**, with 18 of 18 expected receipts accepted. No execution receipts have been supplied for cases 04 through 30. The complete local JSON for cases 01, 02 and 03 has not yet been independently inspected here.
+The operator has reported the first four completed **six-role live LLM trials**, synthetic cases `HSPD-TRIAL001-01` through `HSPD-TRIAL001-04`. The local console printed `valid live receipts: 6 /6 missing: none` for each case, after an offline preflight. This is **4 reported completed cases of 30 planned**, with 24 of 24 expected receipts accepted. No execution receipts have been supplied for cases 05 through 30. The complete local JSON for cases 01 through 04 has not yet been independently inspected here.
 
 The [TRIAL 001 dashboard](trial001.html) records this bounded public claim and provides a browser-only audit interface for selecting local report files, checking the presence of five specialist LLM receipts and a separate Arbiter receipt, the declared enforcement of human review and disabled real-world actuation, and downloading an audit summary. Browser audits do not authenticate provider origin, hidden ground truth, inference accuracy, peace outcomes, or doctrine validity. The published structured progress snapshot is [trial001_status.json](trial001_status.json).
 
