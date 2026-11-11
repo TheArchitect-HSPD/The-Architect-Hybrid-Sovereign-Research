@@ -38,6 +38,14 @@ The GitHub Pages host is a static site. It cannot host the private Windows LLM p
 
 The repository restores `assets/app.js` and `assets/emblem.svg` for existing page navigation, and adds a GitHub Actions regression workflow checking JavaScript syntax, deterministic policy scenarios, basic internal links and lab control IDs. These checks are not browser end-to-end or external-link availability verification.
 
+## TRIAL 001 live pilot results ledger (11 November 2026)
+
+The operator has reported the first completed **six-role live LLM trial**, synthetic case `HSPD-TRIAL001-01`. The local console printed `valid live receipts: 6 /6 missing: none`, after an offline preflight. This is **1 reported completed case of 30 planned**. No execution receipts have been supplied for cases 02 through 30. The complete local JSON for case 01 has not yet been independently inspected here.
+
+The [TRIAL 001 dashboard](trial001.html) records this bounded public claim and provides a browser-only audit interface for selecting local report files, checking the presence of five specialist LLM receipts and a separate Arbiter receipt, the declared enforcement of human review and disabled real-world actuation, and downloading an audit summary. Browser audits do not authenticate provider origin, hidden ground truth, inference accuracy, peace outcomes, or doctrine validity. The published structured progress snapshot is [trial001_status.json](trial001_status.json).
+
+To execute remaining cases 02 through 30, the operator must use the already-configured local Windows federation. GitHub Pages cannot run those local hosted models or access the runtime. No missing case outcomes are implied or invented.
+
 ## Privacy and safety
 
 The public website contains no API keys, local federation result JSON, private runtime configuration or new unpublished doctrine document uploads. The original October 2026 homepage already includes embedded doctrine passages, so repository publication settings and intellectual property implications require the author's review.
