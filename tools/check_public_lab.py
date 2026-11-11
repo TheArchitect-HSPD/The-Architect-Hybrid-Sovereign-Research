@@ -58,7 +58,8 @@ def check():
                     errors.append(f"{filename}: missing anchor: {value}")
     lab = (ROOT / "lab.html").read_text(encoding="utf-8")
     for control in ("lab-scenario","lab-run","lab-batch","lab-export","custom-add",
-                    "custom-run","lab-trace","lab-file","lab-import-output"):
+                    "custom-run","lab-trace","lab-file","lab-import-output",
+                    "problem-text","problem-export","problem-clear"):
         if f'id="{control}"' not in lab:
             errors.append("Missing lab control: "+control)
     for name in ("assets/app.js","assets/lab.js","assets/lab.css",
