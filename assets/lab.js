@@ -77,7 +77,7 @@
   $('problem-export').addEventListener('click', () => {
     const problem = $('problem-text').value.trim();
     if (!problem) { text('problem-feedback','Enter a fictional problem before exporting.'); return; }
-    const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\\..+$/,'').replace('T','_');
+    const stamp = new Date().toISOString().replace(/[^0-9]/g,'').slice(0,14);
     const id = 'HSPD-WEB-DRAFT-'+stamp;
     saveJson({
       scenario_id:id,
