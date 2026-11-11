@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "HSPD-TRIAL001",
+  "published_date": "2026-11-11",
+  "method": "Hosted model calls through a local six-role Windows federation, using synthetic author-generated scenarios",
+  "report_provenance": "Operator-shared PowerShell console output; underlying result JSON not independently inspected",
+  "scenario_total": 30,
+  "scenarios_executed_reported": 1,
+  "scenarios_with_six_valid_llm_receipts_reported": 1,
+  "scenarios_unexecuted_or_unreported": 29,
+  "successful_six_role_case_ids": [
+    "HSPD-TRIAL001-01"
+  ],
+  "accepted_model_receipts_reported": 6,
+  "expected_model_receipts_for_reported_cases": 6,
+  "model_outcome_accuracy_evaluated": false,
+  "civilian_harm_evaluated": false,
+  "doctrine_effectiveness_validated": false,
+  "independent_blinded_replication": false,
+  "real_world_actions_enabled": false,
+  "limitations": [
+    "One successful integration receipt is not proof of doctrine efficacy.",
+    "Five model agents and one Arbiter were reported accepted by the local output, but full report has not been independently inspected.",
+    "No evidence was provided of execution or outcomes for cases 02 through 30.",
+    "These synthetic cases do not constitute blinded real-world data, and causal or peace outcomes were not measured."
+  ]
+}
