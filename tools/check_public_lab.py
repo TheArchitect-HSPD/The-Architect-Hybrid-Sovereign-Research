@@ -35,8 +35,10 @@ def check():
             if dest.scheme or dest.netloc or value.startswith(("mailto:", "tel:", "data:")):
                 continue
             target = unquote(dest.path)
-            if not target or target == "." or target == "./":
+            if not target:
                 resolved = ROOT / filename
+            elif target == "." or target == "./":
+                resolved = ROOT / "index.html"
             elif target.startswith("/"):
                 # Project Pages uses a repository subpath; avoid root-relative URLs.
                 errors.append(f"{filename}: root-relative link {value}")
