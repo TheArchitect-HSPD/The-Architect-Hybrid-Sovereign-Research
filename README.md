@@ -38,6 +38,10 @@ The GitHub Pages host is a static site. It cannot host the private Windows LLM p
 
 The repository restores `assets/app.js` and `assets/emblem.svg` for existing page navigation, and adds a GitHub Actions regression workflow checking JavaScript syntax, deterministic policy scenarios, basic internal links and lab control IDs. These checks are not browser end-to-end or external-link availability verification.
 
+## HSPD TRIAL 002 comparison protocol
+
+The [TRIAL 002 experimental page](trial002.html) and [protocol](TRIAL002_PROTOCOL.md) define a sixty-case matched synthetic comparison of the same live model federation with HSPD manuscript grounding enabled versus disabled. The [Python experimental harness](downloads/trial002.py) supports immutable local preregistration files, paired runs, strict six-role receipt checks and conservative action-label scoring. **No TRIAL 002 outcomes have been reported or validated.** Even a positive benchmark result would support a narrow synthetic action-classification improvement only, not proven geopolitical peace.
+
 ## TRIAL 001 first-attempt pilot results (11 November 2026)
 
 The operator has reported the first four completed **six-role live LLM trials**, synthetic cases `HSPD-TRIAL001-01` through `HSPD-TRIAL001-04`. The local console printed `valid live receipts: 6 /6 missing: none` for each case, after an offline preflight. This is **4 reported completed cases of 30 planned**, with 24 of 24 expected receipts accepted. No execution receipts have been supplied for cases 05 through 30. The complete local JSON for cases 01 through 04 has not yet been independently inspected here.
