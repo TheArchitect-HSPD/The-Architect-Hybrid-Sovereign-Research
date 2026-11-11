@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "HSPD-TRIAL001-01",
+    "domain": "infrastructure",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-02",
+    "domain": "infrastructure",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-03",
+    "domain": "infrastructure",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-04",
+    "domain": "infrastructure",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-05",
+    "domain": "infrastructure",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-06",
+    "domain": "narrative",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-07",
+    "domain": "narrative",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-08",
+    "domain": "narrative",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-09",
+    "domain": "narrative",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-10",
+    "domain": "narrative",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-11",
+    "domain": "sovereignty",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-12",
+    "domain": "sovereignty",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-13",
+    "domain": "sovereignty",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-14",
+    "domain": "sovereignty",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-15",
+    "domain": "sovereignty",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-16",
+    "domain": "civilian",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-17",
+    "domain": "civilian",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-18",
+    "domain": "civilian",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-19",
+    "domain": "civilian",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-20",
+    "domain": "civilian",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-21",
+    "domain": "adversarial",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-22",
+    "domain": "adversarial",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-23",
+    "domain": "adversarial",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-24",
+    "domain": "adversarial",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-25",
+    "domain": "adversarial",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-26",
+    "domain": "coordination",
+    "evidence": [
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "common-author",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "audit-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "audit-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 0; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-27",
+    "domain": "coordination",
+    "evidence": [
+      {
+        "root": "upstream-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "upstream-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "upstream-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "upstream-5",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "upstream-6",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 1; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-28",
+    "domain": "coordination",
+    "evidence": [
+      {
+        "root": "source-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "source-0",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-1",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "source-1",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-2",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "source-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "source-3",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 2; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-29",
+    "domain": "coordination",
+    "evidence": [
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "shared-control",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "separate-3",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "separate-4",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "separate-5",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "separate-6",
+        "supports": true,
+        "confidence": 0.88
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 3; no independently established truth."
+  },
+  {
+    "id": "HSPD-TRIAL001-30",
+    "domain": "coordination",
+    "evidence": [
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": true,
+        "confidence": 0.86
+      },
+      {
+        "root": "root-2",
+        "supports": true,
+        "confidence": 0.84
+      },
+      {
+        "root": "root-0",
+        "supports": true,
+        "confidence": 0.88
+      },
+      {
+        "root": "root-1",
+        "supports": false,
+        "confidence": 0.76
+      },
+      {
+        "root": "root-2",
+        "supports": false,
+        "confidence": 0.72
+      },
+      {
+        "root": "root-0",
+        "supports": false,
+        "confidence": 0.76
+      }
+    ],
+    "evaluator_notes": "Synthetic source-lineage robustness pattern 4; no independently established truth."
+  }
+]
