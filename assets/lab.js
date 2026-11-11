@@ -74,6 +74,22 @@
     a.href=url; a.download=filename; document.body.appendChild(a);a.click();a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),3000);
   }
+  $('problem-export').addEventListener('click', () => {
+    const problem = $('problem-text').value.trim();
+    if (!problem) { text('problem-feedback','Enter a fictional problem before exporting.'); return; }
+    const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\\..+$/,'').replace('T','_');
+    const id = 'HSPD-WEB-DRAFT-'+stamp;
+    saveJson({
+      scenario_id:id,
+      classification:'SYNTHETIC TEST DATA ONLY',
+      description:'UNVERIFIED AUTHOR-SUPPLIED SYNTHETIC RESEARCH DRAFT',
+      research_question:problem,
+      signals:[{id:'USER-PROBLEM-001',type:'user_supplied_scenario',source:'UNVERIFIED_USER_INPUT',description:problem}],
+      research_limitations:{structured_constitutional_evidence:'NOT_PROVIDED',independent_evidence_authentication:'NOT_PROVIDED',structured_safeguards:'NOT_PROVIDED',human_review_mandatory:true,real_world_actions_permitted:false}
+    }, 'HSPD_problem_'+stamp+'.json');
+    text('problem-feedback','Synthetic draft exported locally. No validation, inference or network transmission occurred.');
+  });
+  $('problem-clear').addEventListener('click', () => { $('problem-text').value='';text('problem-feedback','Problem editor cleared.'); });
   $('lab-export').addEventListener('click', () => {
     if (!previous) return;
     const r=previous[0];
