@@ -123,5 +123,14 @@
     "agent-04": 2,
     "agent-05": 1,
     "agent-21": 0
-  }
+  },
+  "audit_summary_received": true,
+  "audit_report_generated_at": "2026-11-11T21:27:22.981987+00:00",
+  "audit_report_provenance": "User uploaded local audit_summary.json; summary independently inspected in ChatGPT, underlying 30 original reports not examined",
+  "audit_reports_present": 30,
+  "audit_cases_with_six_valid_llm_receipts": 24,
+  "audit_cases_with_declared_safe_enforcement_and_full_receipts": 24,
+  "audit_cases_with_validation_flags": 6,
+  "audit_scientific_verdict": "INCONCLUSIVE_ON_DOCTRINE_EFFECTIVENESS",
+  "audit_note": "All 30 per-case summaries record human_review_enforced=true and real_world_actions_disabled=true; records are unverified statements from the local report audit."
 }
