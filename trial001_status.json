@@ -3,34 +3,60 @@
   "experiment_id": "HSPD-TRIAL001",
   "published_date": "2026-11-11",
   "method": "Hosted model calls through a local six-role Windows federation, using synthetic author-generated scenarios",
-  "report_provenance": "Operator-shared PowerShell console summaries for cases 01 through 05; full local JSON not independently inspected",
+  "report_provenance": "Operator-shared PowerShell console summaries for cases 01 through 30; original JSON reports not independently reviewed",
   "scenario_total": 30,
-  "scenarios_executed_reported": 5,
-  "scenarios_with_six_valid_llm_receipts_reported": 4,
-  "scenarios_unexecuted_or_unreported": 25,
+  "scenarios_executed_reported": 30,
+  "scenarios_with_six_valid_llm_receipts_reported": 24,
+  "scenarios_unexecuted_or_unreported": 0,
   "successful_six_role_case_ids": [
     "HSPD-TRIAL001-01",
     "HSPD-TRIAL001-02",
     "HSPD-TRIAL001-03",
-    "HSPD-TRIAL001-04"
+    "HSPD-TRIAL001-04",
+    "HSPD-TRIAL001-06",
+    "HSPD-TRIAL001-07",
+    "HSPD-TRIAL001-09",
+    "HSPD-TRIAL001-10",
+    "HSPD-TRIAL001-11",
+    "HSPD-TRIAL001-12",
+    "HSPD-TRIAL001-14",
+    "HSPD-TRIAL001-15",
+    "HSPD-TRIAL001-16",
+    "HSPD-TRIAL001-17",
+    "HSPD-TRIAL001-18",
+    "HSPD-TRIAL001-20",
+    "HSPD-TRIAL001-21",
+    "HSPD-TRIAL001-22",
+    "HSPD-TRIAL001-23",
+    "HSPD-TRIAL001-25",
+    "HSPD-TRIAL001-26",
+    "HSPD-TRIAL001-28",
+    "HSPD-TRIAL001-29",
+    "HSPD-TRIAL001-30"
   ],
-  "accepted_model_receipts_reported": 29,
-  "expected_model_receipts_for_reported_cases": 30,
+  "accepted_model_receipts_reported": 174,
+  "expected_model_receipts_for_reported_cases": 180,
   "model_outcome_accuracy_evaluated": false,
   "civilian_harm_evaluated": false,
   "doctrine_effectiveness_validated": false,
   "independent_blinded_replication": false,
   "real_world_actions_enabled": false,
   "limitations": [
-    "Four successful integration receipts is not proof of doctrine efficacy.",
-    "Five model agents and one Arbiter were reported accepted by the local output, but full report has not been independently inspected.",
-    "No evidence was provided of execution or outcomes for cases 06 through 30.",
-    "These synthetic cases do not constitute blinded real-world data, and causal or peace outcomes were not measured.",
-    "Case 05 returned 5 of 6 accepted model receipts; the cause of agent-04 nonacceptance remains unverified."
+    "First-attempt 24/30 full six-role completion; six cases with exactly one unaccepted LLM receipt each.",
+    "Reported receipt validity is based on local runner's schema and mode checks, not provider-attested or independently verified model execution.",
+    "Failure causes for six unaccepted receipts have not been diagnosed from full JSON.",
+    "All 30 scenarios are author-generated synthetic source-lineage exercises; no independently validated hidden truth, suitable HSPD-off comparison or simulated civilian-harm outcomes were provided.",
+    "Research pilot applies a mandatory human-review requirement to all cases, so human-review frequency cannot differentiate systems.",
+    "The study measures software receipt completion, not efficacy or real-world peace outcomes."
   ],
-  "scenarios_with_incomplete_model_receipts_reported": 1,
+  "scenarios_with_incomplete_model_receipts_reported": 6,
   "incomplete_case_ids": [
-    "HSPD-TRIAL001-05"
+    "HSPD-TRIAL001-05",
+    "HSPD-TRIAL001-08",
+    "HSPD-TRIAL001-13",
+    "HSPD-TRIAL001-19",
+    "HSPD-TRIAL001-24",
+    "HSPD-TRIAL001-27"
   ],
   "incomplete_cases": [
     {
@@ -41,6 +67,61 @@
         "agent-04"
       ],
       "error_cause": "NOT_YET_DIAGNOSED"
+    },
+    {
+      "scenario_id": "HSPD-TRIAL001-08",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-01"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
+    },
+    {
+      "scenario_id": "HSPD-TRIAL001-13",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-02"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
+    },
+    {
+      "scenario_id": "HSPD-TRIAL001-19",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-04"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
+    },
+    {
+      "scenario_id": "HSPD-TRIAL001-24",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-05"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
+    },
+    {
+      "scenario_id": "HSPD-TRIAL001-27",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-01"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
     }
-  ]
+  ],
+  "full_cohort_completion_rate": 0.8,
+  "individual_receipt_acceptance_rate": 0.9666666666666667,
+  "failure_counts_by_agent": {
+    "agent-01": 2,
+    "agent-02": 1,
+    "agent-03": 0,
+    "agent-04": 2,
+    "agent-05": 1,
+    "agent-21": 0
+  }
 }
