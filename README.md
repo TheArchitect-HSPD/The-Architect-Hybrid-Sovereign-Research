@@ -30,6 +30,14 @@ The operator reported 105/105 passing targeted regression tests and a successful
 
 A local human research console can save and dispatch fictional text scenarios after explicit cloud consent, and a read-only viewer can display saved assessment receipts. These are **local prototype tools**, not interactive features of the public site. The narrative drafts are not independently authenticated or structurally validated evidence. The saved local reports remain unpublished and unaudited. See [the dated research update](shield21.html#november11).
 
+## Public interactive laboratory (11 November 2026)
+
+The [Interactive HSPD Lab](https://thearchitect-hspd.github.io/The-Architect-Hybrid-Sovereign-Research/lab.html) now runs six predefined evidence scenarios through three actual deterministic browser policies: raw majority, confidence weighting, and the independent-root Arbiter rule. Visitors can vary the shuffle seed, execute a 30-seed regression, inspect 21 labelled synthetic role traces, edit a custom fictional evidence scenario, export the browser trace, and open privately saved live federation JSON reports **locally in the browser**. This is fully functional offline policy simulation, not 21 separately running LLMs.
+
+The GitHub Pages host is a static site. It cannot host the private Windows LLM processes, protect OpenAI/Anthropic/Adaption provider credentials, or provide secure multi-user inference by itself. A true live browser interface requires a separately hosted and authenticated backend, private doctrine storage, server-side usage limits, output validation, audit logs and an explicit operator consent flow. Do not place provider keys into public HTML or JavaScript. The live model control is therefore not presented as available on the website.
+
+The repository restores `assets/app.js` and `assets/emblem.svg` for existing page navigation, and adds a GitHub Actions regression workflow checking JavaScript syntax, deterministic policy scenarios, basic internal links and lab control IDs. These checks are not browser end-to-end or external-link availability verification.
+
 ## Privacy and safety
 
 The public website contains no API keys, local federation result JSON, private runtime configuration or new unpublished doctrine document uploads. The original October 2026 homepage already includes embedded doctrine passages, so repository publication settings and intellectual property implications require the author's review.
