@@ -1,0 +1,61 @@
+name: Validate interactive HSPD website
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lab.html"
+      - "shield21.html"
+      - "research.html"
+      - "architecture.html"
+      - "arbiter.html"
+      - "evidence.html"
+      - "about.html"
+      - "assets/**"
+      - "dataset.js"
+      - "engine_browser.js"
+      - "test_browser_engine.js"
+      - "tools/check_public_lab.py"
+      - ".github/workflows/validate_public_lab.yml"
+  pull_request:
+    paths:
+      - "lab.html"
+      - "assets/**"
+      - "tools/check_public_lab.py"
+      - ".github/workflows/validate_public_lab.yml"
+permissions:
+  contents: read
+jobs:
+  browser-static-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: JavaScript syntax
+        run: |
+          node --check assets/app.js
+          node --check assets/lab.js
+          node --check dataset.js
+          node --check engine_browser.js
+          node --check ui.js
+      - name: Deterministic Arbiter browser regression
+        run: node test_browser_engine.js
+      - name: Public pages and navigation
+        run: python tools/check_public_lab.py
+      - name: Homepage banner stays idempotent
+        run: |
+          python - <<'PY'
+          from tools.refresh_shield21_home import inject, START, END
+          legacy = '<html><body id="home"><main>Preserved</main></body></html>'
+          result = inject(legacy)
+          assert inject(result) == result
+          assert result.count(START) == 1 and result.count(END) == 1
+          assert 'href="lab.html"' in result
+          assert '<main>Preserved</main>' in result
+          print("PASS: public homepage links to lab, preserved research remains intact")
+          PY
