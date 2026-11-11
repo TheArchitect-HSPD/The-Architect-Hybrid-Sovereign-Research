@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - "lab.html"
+      - "trial001.html"
+      - "trial001_status.json"
       - "shield21.html"
       - "research.html"
       - "architecture.html"
@@ -40,6 +42,7 @@ jobs:
         run: |
           node --check assets/app.js
           node --check assets/lab.js
+          node --check assets/trial001.js
           node --check dataset.js
           node --check engine_browser.js
           node --check ui.js
