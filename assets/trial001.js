@@ -30,15 +30,17 @@
       const metrics=$("trial-metrics");metrics.replaceChildren();
       metric(metrics,"Reported completed",data.scenarios_executed_reported+" / "+data.scenario_total,"Cases that generated a reported live six-role result.");
       metric(metrics,"Reported six-role accepted",data.scenarios_with_six_valid_llm_receipts_reported+" / "+data.scenario_total,"This is a receipt completion rate, not inference correctness.");
+      metric(metrics,"Incomplete or failed",String(data.scenarios_with_incomplete_model_receipts_reported||0),"An incomplete receipt is kept as a failure, not counted as a completed case.");
       metric(metrics,"Unreported cases",data.scenarios_unexecuted_or_unreported+" / "+data.scenario_total,"No result is claimed for an unreported case.");
       const table=$("trial-case-table");table.replaceChildren();
       const done=new Set(data.successful_six_role_case_ids||[]);
+      const incomplete=new Map((data.incomplete_cases||[]).map(x=>[x.scenario_id,x]));
       for(let i=1;i<=30;i++){
         const id=caseName(i);
         const tr=document.createElement("tr");
         node("td",id,tr);
-        node("td",done.has(id)?"Reported 6/6 valid live receipts":"No result reported",tr);
-        node("td",done.has(id)?"Operator console summary, full JSON not reviewed":"No receipt in published evidence",tr);
+        node("td",done.has(id)?"Reported 6/6 valid live receipts":incomplete.has(id)?("Incomplete: "+incomplete.get(id).valid_model_receipts_reported+"/6"):"No result reported",tr);
+        node("td",done.has(id)?"Operator console summary, full JSON not reviewed":incomplete.has(id)?("Operator reported missing "+(incomplete.get(id).missing_agent_ids||[]).join(", ")+"; cause unverified"):"No receipt in published evidence",tr);
         table.appendChild(tr);
       }
     } catch(error) {set("trial-status-note","Could not load published progress: "+error.message);}
