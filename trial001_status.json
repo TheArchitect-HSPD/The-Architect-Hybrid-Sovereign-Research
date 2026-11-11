@@ -3,19 +3,19 @@
   "experiment_id": "HSPD-TRIAL001",
   "published_date": "2026-11-11",
   "method": "Hosted model calls through a local six-role Windows federation, using synthetic author-generated scenarios",
-  "report_provenance": "Operator-shared PowerShell console outputs for cases 01 through 04; full result JSON not independently inspected",
+  "report_provenance": "Operator-shared PowerShell console summaries for cases 01 through 05; full local JSON not independently inspected",
   "scenario_total": 30,
-  "scenarios_executed_reported": 4,
+  "scenarios_executed_reported": 5,
   "scenarios_with_six_valid_llm_receipts_reported": 4,
-  "scenarios_unexecuted_or_unreported": 26,
+  "scenarios_unexecuted_or_unreported": 25,
   "successful_six_role_case_ids": [
     "HSPD-TRIAL001-01",
     "HSPD-TRIAL001-02",
     "HSPD-TRIAL001-03",
     "HSPD-TRIAL001-04"
   ],
-  "accepted_model_receipts_reported": 24,
-  "expected_model_receipts_for_reported_cases": 24,
+  "accepted_model_receipts_reported": 29,
+  "expected_model_receipts_for_reported_cases": 30,
   "model_outcome_accuracy_evaluated": false,
   "civilian_harm_evaluated": false,
   "doctrine_effectiveness_validated": false,
@@ -24,7 +24,23 @@
   "limitations": [
     "Four successful integration receipts is not proof of doctrine efficacy.",
     "Five model agents and one Arbiter were reported accepted by the local output, but full report has not been independently inspected.",
-    "No evidence was provided of execution or outcomes for cases 05 through 30.",
-    "These synthetic cases do not constitute blinded real-world data, and causal or peace outcomes were not measured."
+    "No evidence was provided of execution or outcomes for cases 06 through 30.",
+    "These synthetic cases do not constitute blinded real-world data, and causal or peace outcomes were not measured.",
+    "Case 05 returned 5 of 6 accepted model receipts; the cause of agent-04 nonacceptance remains unverified."
+  ],
+  "scenarios_with_incomplete_model_receipts_reported": 1,
+  "incomplete_case_ids": [
+    "HSPD-TRIAL001-05"
+  ],
+  "incomplete_cases": [
+    {
+      "scenario_id": "HSPD-TRIAL001-05",
+      "valid_model_receipts_reported": 5,
+      "expected_model_receipts": 6,
+      "missing_agent_ids": [
+        "agent-04"
+      ],
+      "error_cause": "NOT_YET_DIAGNOSED"
+    }
   ]
 }
