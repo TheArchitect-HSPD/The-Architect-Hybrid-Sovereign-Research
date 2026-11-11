@@ -40,11 +40,11 @@ The repository restores `assets/app.js` and `assets/emblem.svg` for existing pag
 
 ## TRIAL 001 live pilot results ledger (11 November 2026)
 
-The operator has reported the first completed **six-role live LLM trial**, synthetic case `HSPD-TRIAL001-01`. The local console printed `valid live receipts: 6 /6 missing: none`, after an offline preflight. This is **1 reported completed case of 30 planned**. No execution receipts have been supplied for cases 02 through 30. The complete local JSON for case 01 has not yet been independently inspected here.
+The operator has reported the first two completed **six-role live LLM trials**, synthetic cases `HSPD-TRIAL001-01` and `HSPD-TRIAL001-02`. The local console printed `valid live receipts: 6 /6 missing: none` for each case, after an offline preflight. This is **2 reported completed cases of 30 planned**, with 12 of 12 expected receipts accepted. No execution receipts have been supplied for cases 03 through 30. The complete local JSON for cases 01 and 02 has not yet been independently inspected here.
 
 The [TRIAL 001 dashboard](trial001.html) records this bounded public claim and provides a browser-only audit interface for selecting local report files, checking the presence of five specialist LLM receipts and a separate Arbiter receipt, the declared enforcement of human review and disabled real-world actuation, and downloading an audit summary. Browser audits do not authenticate provider origin, hidden ground truth, inference accuracy, peace outcomes, or doctrine validity. The published structured progress snapshot is [trial001_status.json](trial001_status.json).
 
-To execute remaining cases 02 through 30, the operator must use the already-configured local Windows federation. GitHub Pages cannot run those local hosted models or access the runtime. No missing case outcomes are implied or invented.
+To execute remaining cases 03 through 30, the operator must use the already-configured local Windows federation. GitHub Pages cannot run those local hosted models or access the runtime. No missing case outcomes are implied or invented.
 
 ## Privacy and safety
 
