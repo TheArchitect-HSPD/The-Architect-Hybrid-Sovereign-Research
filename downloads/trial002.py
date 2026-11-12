@@ -226,8 +226,10 @@ def run(count, start, retry_invalid=False):
             # Strict doctrine grounding is appropriate only for the HSPD arm.
             if arm == "hspd":
                 env["HSPD_STRICT_DOCTRINE"] = "1"
+                env.pop("HSPD_TRIAL002_BASELINE", None)
             else:
                 env.pop("HSPD_STRICT_DOCTRINE", None)
+                env["HSPD_TRIAL002_BASELINE"] = "1"
             if arm == "baseline":
                 # Baseline still receives ordinary safe system prompts and
                 # deterministic guard; only manuscript retrieval is removed.
