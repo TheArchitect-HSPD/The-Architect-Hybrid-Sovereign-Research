@@ -11,6 +11,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+import traceback
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +36,7 @@ def safe_usage(obj):
 
 def worker():
     """Executed only by the guarded parent process."""
+    sys.path.insert(0, str(ROOT))
     from agent_server import find_agent, llm_assessment
     event = json.loads(SOURCE.read_text(encoding="utf-8"))
     assert event.get("scenario_id") == "HSPD-TRIAL002-02"
@@ -68,7 +70,20 @@ def main():
     ap.add_argument("--watchdog-seconds", type=int, default=240)
     args = ap.parse_args()
     if args.worker:
-        worker()
+        try:
+            worker()
+        except Exception as exc:
+            frames = traceback.extract_tb(exc.__traceback__)
+            safe_frames = [
+                "%s:%d:%s" % (Path(f.filename).name, f.lineno, f.name)
+                for f in frames[-4:]
+            ]
+            # Never emit exception strings, arguments, provider payloads or stderr.
+            print(json.dumps({
+                "status": "WORKER_FAILURE",
+                "exception_class": type(exc).__name__,
+                "safe_error_frames": safe_frames
+            }))
         return
     if not 190 <= args.watchdog_seconds <= 600:
         ap.error("Watchdog must be between 190 and 600 seconds")
@@ -156,6 +171,8 @@ def main():
     print("Result:", result.get("status"))
     if result.get("exception_class"):
         print("Exception class:", result["exception_class"])
+    if result.get("safe_error_frames"):
+        print("Safe frames:", " -> ".join(result["safe_error_frames"]))
     if result.get("elapsed_seconds") is not None:
         print("Worker elapsed:", result["elapsed_seconds"], "seconds")
     if result.get("safe_generation_diagnostics"):
