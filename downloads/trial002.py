@@ -177,7 +177,7 @@ def receipt(report, case_id):
             "arbiter_status": arb.get("status"), "arbiter_mode": arb.get("mode")}
 
 
-def run(count, start):
+def run(count, start, retry_invalid=False):
     plan = prepare()
     config_check()
     cases = json.loads(CASES.read_text(encoding="utf-8"))
@@ -187,7 +187,7 @@ def run(count, start):
         raise SystemExit("Cancelled before model calls.")
     envbase = os.environ.copy()
     envbase["HSPD_ALLOW_DOCTRINE_CLOUD"] = "1"
-    envbase["HSPD_STRICT_DOCTRINE"] = "1"
+    envbase.pop("HSPD_STRICT_DOCTRINE", None)
     input_dir = DIR / "inputs"
     input_dir.mkdir(parents=True, exist_ok=True)
     for case in cases[start - 1:start - 1 + count]:
@@ -202,10 +202,32 @@ def run(count, start):
         for arm in arms:
             output = DIR / (cid + "_" + arm + ".json")
             if output.exists():
-                print(cid, arm, "existing result preserved", flush=True)
-                continue
+                if not retry_invalid:
+                    print(cid, arm, "existing result preserved", flush=True)
+                    continue
+                try:
+                    prior = receipt(json.loads(output.read_text(encoding="utf-8")), cid)
+                    if prior["complete"]:
+                        print(cid, arm, "existing six-model valid result preserved", flush=True)
+                        continue
+                except (ValueError, TypeError, json.JSONDecodeError) as exc:
+                    print(cid, arm, "prior result invalid:", type(exc).__name__, flush=True)
+                # Retain all original failures; recovery is a separate attempt.
+                archive = DIR / "prior_attempts"
+                archive.mkdir(parents=True, exist_ok=True)
+                attempt_number = 1
+                while (archive / (output.stem + "_attempt%02d.json" % attempt_number)).exists():
+                    attempt_number += 1
+                destination = archive / (output.stem + "_attempt%02d.json" % attempt_number)
+                output.rename(destination)
+                print(cid, arm, "prior failed result archived:", destination, flush=True)
             env = envbase.copy()
             env["HSPD_DOCTRINE_MODE"] = ARM_MODES[arm]
+            # Strict doctrine grounding is appropriate only for the HSPD arm.
+            if arm == "hspd":
+                env["HSPD_STRICT_DOCTRINE"] = "1"
+            else:
+                env.pop("HSPD_STRICT_DOCTRINE", None)
             if arm == "baseline":
                 # Baseline still receives ordinary safe system prompts and
                 # deterministic guard; only manuscript retrieval is removed.
@@ -312,9 +334,10 @@ def main():
     ap.add_argument("--evaluate", action="store_true")
     ap.add_argument("--start-case", type=int, default=1)
     ap.add_argument("--count", type=int, default=1)
+    ap.add_argument("--retry-invalid", action="store_true", help="Archive incomplete report before paid retry")
     args = ap.parse_args()
     if args.execute:
-        run(args.count, args.start_case)
+        run(args.count, args.start_case, args.retry_invalid)
     elif args.evaluate:
         evaluate()
     else:
